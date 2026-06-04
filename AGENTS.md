@@ -14,14 +14,46 @@ Operational project: https://github.com/users/kmosoti/projects/5
 
 ## Required Workflow
 
-1. Pick an issue from GitHub Project 5 with `Workflow State = Ready`.
-2. Confirm the issue is assigned to `@kmosoti`.
-3. Create or use the issue's development branch.
-4. Keep the work scoped to that issue.
-5. Update docs/tests when behavior, commands, architecture, or workflow changes.
-6. Open a PR that links the issue.
-7. Move the issue to review only when the PR is ready for human review.
-8. Do not merge without `@kmosoti` approval.
+1. Pick an issue from GitHub Project 5 with `Operating Status = Ready`, unless the user explicitly asks for design, triage, or blocked work.
+2. Read the Project item fields before editing: `Work Type`, `Agent Suitability`, `Decision Needed`, `Blocked By`, `Development Branch`, `Review Owner`, `Documentation Gate`, and `Done Evidence`.
+3. Confirm the issue is assigned to `@kmosoti`.
+4. Confirm no unresolved ADR, design decision, dependency, or blocker prevents the work.
+5. Create or use the issue's development branch.
+6. Keep the work scoped to that issue.
+7. Update docs/tests when behavior, commands, architecture, or workflow changes.
+8. Open a PR that links the issue.
+9. Move the issue to review only when the PR is ready for human review.
+10. Do not merge without `@kmosoti` approval.
+
+`Operating Status` is the authoritative workflow state. The older `Workflow State` field is legacy bootstrap history and must not drive new tracking.
+
+## Governance And ADR Gates
+
+Agents must follow the Project 5 governance rules before implementation.
+
+- Work child/card issues, not epics, unless explicitly assigned design work.
+- Epics may have `design/...` branches, but implementation belongs on child/card branches.
+- If `Decision Needed = Yes`, do not implement dependent code until the decision is accepted or explicitly deferred by `@kmosoti`.
+- ADRs are required for architecturally significant decisions: runtime/framework choices, persistence boundaries, retrieval/vector architecture, LLM provider boundaries, source provenance semantics, evidence policy, security/deployment posture, irreversible or expensive-to-change choices, and decisions that materially affect cost or reliability.
+- ADRs are not required for routine implementation sequencing, simple CRUD, local refactors, small UI pages, test additions, or decisions already covered by an accepted ADR.
+- Block only the child issues that depend on an unresolved decision. Keep independent preparatory work moving when it can proceed safely.
+- When a decision changes implementation scope, update the issue body, Project fields, linked docs, and PR notes.
+
+## API And Tooling Discipline
+
+Before using an unfamiliar API, CLI surface, SDK, GraphQL mutation, REST endpoint, or project-management automation, agents must verify the contract from an authoritative source.
+
+Required preflight:
+
+1. Read the official documentation, OpenAPI schema, GraphQL introspection result, CLI `--help`, SDK type signature, or local source that defines the endpoint/tool.
+2. Verify required inputs, accepted field names, field limits, authentication scopes, and side effects.
+3. Prefer a read-only probe before a mutating call when the API supports it.
+4. Resolve project IDs, item IDs, field IDs, option IDs, branch names, and issue IDs from current API reads instead of hard-coding stale values.
+5. For GitHub GraphQL, introspect mutation input types before using a mutation that has not already been proven in this repo.
+6. Do not retry a failing mutating call by guessing parameter names. Stop, inspect the spec/schema/help output, then retry with the verified contract.
+7. Record nontrivial API assumptions and commands in the PR or `Done Evidence`.
+
+If an API does not expose the requested capability, say that clearly and document the supported manual procedure instead of pretending the automation succeeded.
 
 ## Branch Standard
 
@@ -108,4 +140,3 @@ For MVP core code, the PR must also prove:
 - Time and space complexity are understood.
 - LLM, embedding, database, graph, file I/O, and external-call costs are bounded.
 - Source provenance is preserved for generated learning content.
-

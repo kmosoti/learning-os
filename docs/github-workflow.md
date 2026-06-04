@@ -20,7 +20,9 @@ Repo documentation is static reference. Project fields, issue comments, PRs, and
 
 ## Workflow States
 
-Use Project 5 `Workflow State` as the operational state.
+Use Project 5 `Operating Status` as the operational state.
+
+The older `Workflow State` field is retained only as bootstrap history. Do not use it for new tracking.
 
 ```text
 Inbox
@@ -66,13 +68,17 @@ Release slices such as `VS-0 Foundation` and `VS-4 Retrieval` belong in Project 
 
 ## Branches
 
-Each executable issue has one branch:
+Each open repo issue should have one branch recorded in Project 5.
 
 ```text
 type/issue-number-short-slug
 ```
 
-Epics do not need implementation branches. Agents work child/card issues, not epics.
+Epics use `design/...` branches for architecture and planning. Agents should not implement directly from epics unless explicitly instructed.
+
+Executable child/card issues use implementation branches such as `setup/...`, `feature/...`, `infra/...`, or `docs/...`.
+
+Agents must use the branch named in the issue's `Development Branch` Project field.
 
 ## Pull Requests
 
@@ -85,8 +91,37 @@ Every PR must:
 - Include testing evidence.
 - Include docs evidence when docs changed.
 - Confirm Mermaid diagrams render when diagrams changed.
+- Confirm governance and API-spec checks were performed when relevant.
 
 `main` requires pull request review. Agents must not merge without `@kmosoti` approval.
+
+## ADR And Decision Gates
+
+Every epic must pass an architecture-readiness gate, but not every epic automatically needs an ADR.
+
+Create an ADR for architecturally significant decisions:
+
+- runtime/framework/process model
+- persistence, migrations, indexing, or vector backend
+- LLM provider boundary, structured output, prompt lifecycle, or token/cost policy
+- retrieval architecture
+- source provenance, grounding, evidence, or learner-state semantics
+- security, secrets, upload limits, logs, or deployment posture
+- irreversible or expensive-to-change choices
+
+Block only child/card issues that depend on unresolved decisions. If independent work can proceed safely, keep it unblocked.
+
+## API Automation Rule
+
+Before using a mutating API, CLI, SDK, REST endpoint, GraphQL mutation, or Project automation:
+
+1. Inspect the official docs, schema, CLI `--help`, SDK type signature, or GraphQL input type.
+2. Verify required fields, field limits, permissions/scopes, and side effects.
+3. Run a read-only discovery call first when possible.
+4. Resolve IDs and option values from current state.
+5. Stop and inspect the contract after schema or argument failures. Do not guess retries.
+
+For GitHub Project automation, read field IDs and option IDs before editing items. For saved Project views, use the GitHub UI unless a supported create/update API has been verified from the current schema.
 
 ## Documentation Expectations
 
@@ -98,4 +133,3 @@ When Mermaid diagrams change:
 - Verify they render in GitHub preview or Mermaid tooling.
 - Link the diagram-containing docs from the PR.
 - Mention the rendered verification in the PR body.
-
