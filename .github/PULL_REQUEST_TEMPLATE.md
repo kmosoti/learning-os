@@ -52,7 +52,7 @@ Paste output or explain what could not be run and why.
 
 ## Governance And API Contracts
 
-- [ ] Project 5 governance fields were checked: `Operating Status`, `Decision Needed`, `Blocked By`, `Development Branch`, `Review Owner`.
+- [ ] Project 5 governance preflight was completed for all required fields: `Operating Status`, `Work Type`, `Agent Suitability`, `Decision Needed`, `Blocked By`, `Dependencies`, `Development Branch`, `Review Owner`, `Documentation Gate`, `Done Evidence`.
 - [ ] Unresolved ADR/design decisions are linked or explicitly not applicable.
 - [ ] External API, CLI, SDK, REST, GitHub GraphQL, or Project automation assumptions were verified against current docs/help/schema before use.
 - [ ] Mutating API calls used current IDs/options from read-only discovery where applicable.
