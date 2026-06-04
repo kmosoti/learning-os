@@ -1,5 +1,9 @@
 # Roadmap And Milestones
 
+This is a static bootstrap snapshot. The operational roadmap, release-slice grouping, issue state, completion evidence, and agent handoff live in GitHub Project 5:
+
+https://github.com/users/kmosoti/projects/5
+
 The roadmap is ordered to produce a working vertical slice early, then widen the loop. Each milestone should end with something demonstrable.
 
 ## Critical Path
@@ -204,4 +208,3 @@ Week 2:
 ## Development Rule
 
 Do the manual EMT fixture extraction before general LLM extraction. That creates a truth baseline and prevents the project from mistaking plausible structure for useful structure.
-

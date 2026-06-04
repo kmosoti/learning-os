@@ -1,5 +1,9 @@
 # Kanban Board
 
+This is a static bootstrap snapshot. The operational kanban board, workflow state, completion gates, agent handoff, and active roadmap tracking live in GitHub Project 5:
+
+https://github.com/users/kmosoti/projects/5
+
 This board is the working development backlog for the MVP. It is organized as a kanban workflow plus a card deck grouped by epic.
 
 ## Workflow Columns
