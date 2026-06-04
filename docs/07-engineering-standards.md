@@ -34,6 +34,7 @@ If those answers are unclear, the code is not ready to become infrastructure for
 - Validate state transitions.
 - Preserve source provenance for generated learning content.
 - Bound time, space, token, and external-call costs.
+- Verify external API, CLI, SDK, REST, and GraphQL contracts before relying on them.
 - Test pure logic separately from adapters.
 - Emit structured result/evidence objects for important workflows.
 - Classify errors with meaningful domain exceptions or result statuses.
@@ -193,6 +194,34 @@ Minimum contract fields:
 | Complexity | Expected time and space behavior. |
 | External cost | LLM calls, embedding calls, database queries, file reads, network calls. |
 | Provenance | Source span, prompt version, or evidence reference retained. |
+
+## External API Spec Standard
+
+APIs and automation surfaces must be treated as contracts, not guessed interfaces.
+
+Before using an unfamiliar API, CLI command, SDK method, REST endpoint, GraphQL mutation, MCP tool, or GitHub Project automation, verify the current contract from an authoritative source:
+
+- official documentation
+- OpenAPI schema
+- GraphQL introspection
+- CLI `--help`
+- SDK type definitions
+- local source code for internal tools
+
+Required checks:
+
+1. Required fields and accepted field names.
+2. Input limits and validation rules.
+3. Authentication scopes and permissions.
+4. Side effects and idempotency.
+5. Return shape and error shape.
+6. Current resource IDs, field IDs, option IDs, and branch names when automating GitHub.
+
+Use read-only discovery calls before mutating calls when possible.
+
+If a call fails because of a schema, argument, field, or endpoint mismatch, stop and inspect the contract before retrying. Do not guess parameter names or mutate state repeatedly while searching for the right shape.
+
+PRs that add or depend on external APIs must document the contract source and any meaningful assumptions.
 
 ## Result And Evidence Objects
 
@@ -476,6 +505,7 @@ Use this checklist for every nontrivial implementation PR:
 [ ] Space complexity is understood.
 [ ] LLM, embedding, database, and file I/O costs are bounded.
 [ ] Source provenance is preserved where content is generated.
+[ ] External API, CLI, SDK, REST, or GraphQL assumptions were verified against current docs/help/schema before use.
 [ ] Tests cover pure logic and at least one relevant boundary.
 [ ] Logs/results provide enough evidence to debug failure.
 [ ] The PR links its issue and uses that issue's development branch.
