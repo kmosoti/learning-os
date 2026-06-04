@@ -18,6 +18,7 @@ The project should not start as an automatic contemporary science updater. The a
 - [Decision Log](docs/05-decision-log.md)
 - [Risk Register](docs/06-risk-register.md)
 - [Engineering Standards](docs/07-engineering-standards.md)
+- [GitHub Bootstrap](docs/08-github-bootstrap.md)
 
 ## MVP Demo Target
 
