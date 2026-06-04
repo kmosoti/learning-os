@@ -478,6 +478,10 @@ Use this checklist for every nontrivial implementation PR:
 [ ] Source provenance is preserved where content is generated.
 [ ] Tests cover pure logic and at least one relevant boundary.
 [ ] Logs/results provide enough evidence to debug failure.
+[ ] The PR links its issue and uses that issue's development branch.
+[ ] @kmosoti is requested as reviewer and approval owner.
+[ ] Human-readable docs or READMEs are updated when behavior changes.
+[ ] Mermaid diagrams render correctly when added or changed.
 ```
 
 ## Learning Notes For This Project
@@ -492,4 +496,3 @@ Examples:
 - Ingestion pipeline: state machine, idempotency, result object.
 - Planner: decision table, graph complexity, deterministic heuristics.
 - Claim grounding: evidence-first design, bounded context, source provenance.
-
