@@ -67,6 +67,12 @@ uv run ty check
 uv run pytest
 ```
 
+## Run The App
+
+```powershell
+uv run uvicorn app.main:app --reload
+```
+
 ## First Implementation Slice
 
 Build a local app that can:

@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Course-aware, source-grounded, learner-adaptive knowledge graph tutor."
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
-dependencies = []
+dependencies = [
+    "fastapi>=0.136.3",
+    "uvicorn[standard]>=0.49.0",
+]
 
 [tool.uv]
 package = false
