@@ -152,10 +152,29 @@ Do not guess at endpoint parameters, GraphQL input names, Project field names, o
 
 ## GitHub Project View Rule
 
-As of this project setup, GitHub's public API exposes Project V2 saved views for reading but does not expose a supported mutation for creating or editing saved views.
+GitHub Project V2 saved views can be read through GraphQL and created through the REST Project views API.
+
+For user-owned projects, first verify the current REST contract, then use the Project views endpoint with:
+
+- `X-GitHub-Api-Version: 2026-03-10`
+- `POST /users/{username}/projectsV2/{project_number}/views`
+- `name`
+- `layout`: `table`, `board`, or `roadmap`
+- optional `filter`
+- optional `visible_fields` using numeric REST field IDs from `GET /users/{username}/projectsV2/{project_number}/fields`
 
 Agents should:
 
 - Read current views through GraphQL before claiming view state.
+- Read REST field IDs before setting `visible_fields`.
+- Create views idempotently by checking existing view names first.
+- Prefer simple, single-field filters unless a combined filter has been verified against the live endpoint.
 - Keep canonical view definitions in the Project README and `PROJECT DOC: Views and filters`.
-- Report any saved-view UI work as a manual GitHub UI step unless a supported API becomes available and has been verified from the current schema.
+- Use the GitHub UI for view update/delete, grouping, sorting, and board column tuning unless a supported API contract has been verified for that operation.
+
+View configuration boundaries:
+
+- API-safe: create saved views, set layout, set saved filter, set visible fields.
+- UI-required unless separately verified: rename, delete, reorder tabs, duplicate views, save unsaved view changes, set table grouping/slicing/sorting, set board column field, show/hide board columns, set board column limits, set roadmap start/target date fields, set roadmap markers, set roadmap zoom, and enable field sums.
+- For the Learning OS kanban board, the intended board column field is `Operating Status`, not GitHub's default `Status`.
+- For the MVP roadmap, the intended date field is `Target Date`; use milestones as markers when useful.
