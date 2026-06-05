@@ -58,6 +58,15 @@ uv sync
 
 If uv reports that no managed `3.14.5` download is available for your platform, update uv or install Python 3.14.5 separately, then rerun `uv sync`. Do not silently fall back to an earlier 3.14 patch version.
 
+## Quality Checks
+
+```powershell
+uv run ruff check .
+uv run ruff format --check .
+uv run ty check
+uv run pytest
+```
+
 ## First Implementation Slice
 
 Build a local app that can:
