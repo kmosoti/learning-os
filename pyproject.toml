@@ -1,0 +1,10 @@
+[project]
+name = "learning-os"
+version = "0.1.0"
+description = "Course-aware, source-grounded, learner-adaptive knowledge graph tutor."
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = []
+
+[tool.uv]
+package = false
