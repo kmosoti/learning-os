@@ -49,6 +49,12 @@ Verified on 2026-06-04:
 - Ruff supports `py314` as a target version.
 - ty is Astral's Python type checker and language server.
 
+## Local Setup
+
+```powershell
+uv sync
+```
+
 ## First Implementation Slice
 
 Build a local app that can:
