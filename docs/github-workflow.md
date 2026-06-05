@@ -121,7 +121,24 @@ Before using a mutating API, CLI, SDK, REST endpoint, GraphQL mutation, or Proje
 4. Resolve IDs and option values from current state.
 5. Stop and inspect the contract after schema or argument failures. Do not guess retries.
 
-For GitHub Project automation, read field IDs and option IDs before editing items. For saved Project views, use the GitHub UI unless a supported create/update API has been verified from the current schema.
+For GitHub Project automation, read field IDs and option IDs before editing items.
+
+For saved Project views:
+
+- Read existing views through GraphQL before claiming view state.
+- Create views with the REST Project views endpoint after verifying the current docs.
+- Use `X-GitHub-Api-Version: 2026-03-10`.
+- Use numeric REST field IDs from the Project fields endpoint when setting `visible_fields`.
+- Use the GitHub UI for update/delete, grouping, sorting, and board column tuning unless a supported API contract has been verified for that operation.
+
+After creating saved views through the API, finish view shaping in the GitHub UI:
+
+- Set `01 Kanban` board column field to `Operating Status`.
+- Hide board columns that are not part of the active workflow, if needed.
+- Apply WIP column limits from `docs/03-kanban-board.md`.
+- Group or slice tables by `Release Slice`, `Epic Area`, `Priority`, or `Completion Gate` where useful.
+- Set `10 MVP Roadmap` to use `Target Date`; use milestones as roadmap markers.
+- Save the view after UI changes so the dot beside the tab disappears.
 
 ## Documentation Expectations
 
