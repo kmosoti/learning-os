@@ -1,5 +1,7 @@
 # Requirements
 
+Audience discovery notes live in [Lightweight Requirements Discovery](09-lightweight-requirements-discovery.md). Treat that document as directional product evidence, not as a replacement for the functional requirements below.
+
 ## Requirement Status Legend
 
 - `MVP`: required for the first usable demo.
