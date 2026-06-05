@@ -52,8 +52,11 @@ Verified on 2026-06-04:
 ## Local Setup
 
 ```powershell
+uv python install 3.14.5
 uv sync
 ```
+
+If uv reports that no managed `3.14.5` download is available for your platform, update uv or install Python 3.14.5 separately, then rerun `uv sync`. Do not silently fall back to an earlier 3.14 patch version.
 
 ## First Implementation Slice
 
