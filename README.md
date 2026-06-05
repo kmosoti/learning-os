@@ -16,6 +16,7 @@ The project should not start as an automatic contemporary science updater. The a
 - [Kanban Board Static Snapshot](docs/03-kanban-board.md)
 - [Roadmap And Milestones Static Snapshot](docs/04-roadmap-and-milestones.md)
 - [Decision Log](docs/05-decision-log.md)
+- [Architecture Decision Records](docs/adr/README.md)
 - [Risk Register](docs/06-risk-register.md)
 - [Engineering Standards](docs/07-engineering-standards.md)
 - [GitHub Bootstrap](docs/08-github-bootstrap.md)
