@@ -168,3 +168,26 @@ Consequences:
 - Pure logic should be testable without network, filesystem, database, or LLM calls.
 - Generated learning content must preserve source provenance.
 - Review should use the engineering rubric in `docs/07-engineering-standards.md`.
+
+## ADR-010 - MVP Runtime And Serving Stack
+
+Status: Accepted
+
+Decision:
+
+Use a modular monolith with Nginx as the deployed edge, Uvicorn as the ASGI runtime, FastAPI as the HTTP adapter, explicit application use cases, domain logic isolated from operational frameworks, and repositories/unit of work behind application ports.
+
+Local MVP development runs Uvicorn directly through uv. Gunicorn is deferred until deployment evidence justifies it. SQLite remains the local-first MVP persistence choice from ADR-004, but the architecture must keep a clear PostgreSQL/pgvector path through ports and adapters.
+
+Rationale:
+
+The stack should prove the learning loop quickly while teaching reliable backend boundaries: thin routes, use-case transaction scripts, domain-owned rules, protocols for external effects, idempotent jobs, structured errors, and bounded operational cost.
+
+Consequences:
+
+- Bootstrap can start with `uv run uvicorn app.main:app --reload`.
+- Nginx deployment configuration is not required for the first local slice.
+- Domain code must not import FastAPI, SQLAlchemy sessions, source parsers, LLM SDKs, or deployment tooling.
+- A later deployment/persistence ADR can decide PostgreSQL, pgvector, systemd, SOPS/age, and Salt details.
+
+Full ADR: [ADR-010: MVP Runtime And Serving Stack](adr/010-mvp-runtime-and-serving-stack.md).
