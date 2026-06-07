@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Courses - learning-os{% endblock %}
+
+{% block content %}
+  <header class="page-header">
+    <div>
+      <h1>Courses</h1>
+      <p class="muted">Create a course, then start attaching sources, notes, outcomes, and study actions.</p>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>New course</h2>
+      <form action="/courses" method="post" class="stack">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" name="title" required maxlength="140" placeholder="UEMR / NTPEC Paramedic Prep">
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea id="description" name="description" maxlength="1000" placeholder="Purpose, exam, class, or prep context"></textarea>
+        </div>
+        <div>
+          <button type="submit">Create course</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Existing courses</h2>
+      {% if courses %}
+        <ul class="list">
+          {% for course in courses %}
+            <li>
+              <a href="/courses/{{ course.id }}">
+                <strong>{{ course.title }}</strong>
+                {% if course.description %}
+                  <br><span class="muted">{{ course.description }}</span>
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="muted">No courses yet.</p>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}

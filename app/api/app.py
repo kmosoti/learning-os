@@ -5,6 +5,8 @@ from app.api.middleware import request_trace_middleware
 from app.api.routes.health import router as health_router
 from app.core.config import Settings, get_settings
 from app.core.logging import configure_logging
+from app.db.session import create_session_factory, engine_from_settings
+from app.web.routes import router as web_router
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -17,6 +19,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         summary="Course-aware, source-grounded learning OS.",
     )
     app.state.settings = settings
+    app.state.db_engine = engine_from_settings(settings)
+    app.state.session_factory = create_session_factory(app.state.db_engine)
 
     @app.middleware("http")
     async def trace_requests(request, call_next):
@@ -24,4 +28,5 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     register_exception_handlers(app)
     app.include_router(health_router)
+    app.include_router(web_router)
     return app
