@@ -73,6 +73,14 @@ uv run pytest
 uv run uvicorn app.main:app --reload
 ```
 
+For local-network testing:
+
+```powershell
+uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+Each request includes an `X-Request-ID` response header and emits a structured request log.
+
 ## First Implementation Slice
 
 Build a local app that can:
