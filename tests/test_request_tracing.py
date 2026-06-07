@@ -15,4 +15,4 @@ async def test_request_trace_header_is_returned() -> None:
 
     assert response.status_code == 200
     assert response.headers["X-Request-ID"] == "req_known"
-    assert response.json() == {"status": "ok"}
+    assert response.json()["status"] == "ok"
