@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from starlette.routing import Route
 
-from app.main import app
+from app.api.app import create_app
+from app.core.config import Settings
+
+app = create_app(Settings(environment="test", log_format="plain"))
 
 
 def test_app_main_exposes_fastapi_app() -> None:
