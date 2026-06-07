@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     request_id_header: str = "X-Request-ID"
     local_host: str = "0.0.0.0"
     local_port: int = Field(default=8000, ge=1, le=65535)
+    database_url: str = "sqlite:///./learning-os.db"
 
 
 @lru_cache
