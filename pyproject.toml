@@ -5,6 +5,7 @@ description = "Course-aware, source-grounded, learner-adaptive knowledge graph t
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
 dependencies = [
+    "alembic>=1.18.4",
     "fastapi>=0.136.3",
     "pydantic-settings>=2.14.1",
     "sqlalchemy>=2.0.50",
