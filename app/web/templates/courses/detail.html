@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}{{ course.title }} - learning-os{% endblock %}
+
+{% block content %}
+  <header class="page-header">
+    <div>
+      <h1>{{ course.title }}</h1>
+      {% if course.description %}
+        <p class="muted">{{ course.description }}</p>
+      {% else %}
+        <p class="muted">Course shell is ready for sources, notes, practice, and planning.</p>
+      {% endif %}
+    </div>
+    <a class="button" href="/courses">All courses</a>
+  </header>
+
+  <section class="panel stack">
+    <div>
+      <h2>Today</h2>
+      <p class="muted">The next useful action will appear after sources and outcomes are available.</p>
+    </div>
+    <div class="status-row">
+      <span class="pill">Sources pending</span>
+      <span class="pill">Notes pending</span>
+      <span class="pill">Planner pending</span>
+    </div>
+  </section>
+
+  <div class="grid" style="margin-top: 14px;">
+    <section class="card">
+      <h3>Sources</h3>
+      <p class="muted">Upload PDFs, notes, assignments, charts, and terminology files.</p>
+    </section>
+    <section class="card">
+      <h3>Notes</h3>
+      <p class="muted">Class notes will become candidate claims and review prompts.</p>
+    </section>
+    <section class="card">
+      <h3>Assignments</h3>
+      <p class="muted">Course questions will become outcomes tied to concepts.</p>
+    </section>
+    <section class="card">
+      <h3>Quiz</h3>
+      <p class="muted">Quiz items will appear when grounded claims or outcomes are ready.</p>
+    </section>
+    <section class="card">
+      <h3>Map</h3>
+      <p class="muted">The course graph will show concepts, outcomes, sources, and learner gaps.</p>
+    </section>
+  </div>
+{% endblock %}
