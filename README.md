@@ -4,7 +4,9 @@ Planning package for the MVP of a course-aware learning OS.
 
 The MVP goal is intentionally narrow:
 
-> Ingest course files, build source-grounded course graphs, capture notes, mature notes into grounded claims, quiz the learner, track mastery gaps, and choose the next useful study action.
+> Ingest course files, preserve source spans, build course and learner ledgers, expose prerequisite debt, generate retrieval practice, track failure modes, and choose the next useful study action.
+
+The project should not compete with generic summarizers. A syllabus is treated as a delivery schedule, not as a complete model of learning. `learning-os` uses course materials as external constraints, then builds a learner-specific cognitive ledger underneath them: what the learner must know, what advanced topics depend on, what evidence proves readiness, what failure modes are recurring, and what action should happen next.
 
 The project should not start as an automatic contemporary science updater. The architecture keeps an evidence layer so that capability can be added later without mixing course content, learner beliefs, and current evidence into one untraceable index.
 
@@ -28,7 +30,7 @@ Operational planning now lives in GitHub Project 5: https://github.com/users/kmo
 
 ## MVP Demo Target
 
-Upload EMT pre-course materials, process them into source spans and graph nodes, help the learner answer assignment questions, ground class notes, generate retrieval-practice quizzes, update learner mastery, and recommend one next study action.
+Upload EMT/paramedic pre-course materials, process them into source spans and graph nodes, build prerequisite ledgers for advanced topics, help the learner answer assignment questions, ground class notes, generate retrieval-practice quizzes, update learner mastery and failure modes, and recommend one next study action.
 
 ## Tooling Baseline
 
@@ -92,4 +94,4 @@ Build a local app that can:
 5. Persist those spans.
 6. Show the source and span count in a plain UI.
 
-That creates the first observable thread through the architecture before adding LLM extraction or quiz behavior.
+That creates the first observable thread through the architecture before adding LLM extraction, prerequisite ledger construction, quiz behavior, or planning.
