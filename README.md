@@ -21,6 +21,7 @@ The project should not start as an automatic contemporary science updater. The a
 - [Engineering Standards](docs/07-engineering-standards.md)
 - [GitHub Bootstrap](docs/08-github-bootstrap.md)
 - [Lightweight Requirements Discovery](docs/09-lightweight-requirements-discovery.md)
+- [Thesis Workspace](docs/thesis/00-index.md)
 - [GitHub Workflow](docs/github-workflow.md)
 - [Agent GitHub Operating Guide](docs/agent-github-operating-guide.md)
 
