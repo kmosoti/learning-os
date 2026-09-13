@@ -1,0 +1,69 @@
+name: Salt 000 and 001 narration build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/salt-voice-build.yml'
+      - 'tools/salt_video_build/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: salt-narration-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  narration:
+    if: github.head_ref == 'build/salt-video-000-001'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      OMNIVOICE_TTS_BACKEND: kittentts
+      OMNIVOICE_KITTENTTS_MODEL: KittenML/kitten-tts-mini-0.8
+      OMNIVOICE_DEVICE: cpu
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - name: Check out isolated build source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Check out pinned VoiceStudio source
+        uses: actions/checkout@v4
+        with:
+          repository: debpalash/VoiceStudio
+          ref: eaf8bb953855cab3b687d547b3835f86fa38b308
+          path: _vendor/VoiceStudio
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install speech system libraries
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends espeak-ng libsndfile1 ffmpeg
+      - name: Install CPU inference packages
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install https://github.com/KittenML/KittenTTS/releases/download/0.8/kittentts-0.8.0-py3-none-any.whl
+          python -m pip install numpy soundfile onnxruntime psutil fastapi pydantic requests platformdirs packaging pyyaml scipy faster-whisper
+      - name: Generate neural narration and independent transcript check
+        run: |
+          python tools/salt_video_build/synthesize.py
+          python -m pip freeze > voice-output/requirements.actual.txt
+      - name: Upload narration and diagnostic manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: salt-narration-000-001
+          path: voice-output/
+          if-no-files-found: error
+          retention-days: 2
+          compression-level: 3
