@@ -1,5 +1,12 @@
 # learning-os
 
+> **LearningOS 2.0 is under construction.** The owner-approved direction is Rust,
+> Leptos islands, Axum and durable offline learning. Start with the
+> [v2 execution contract](docs/architecture/v2-execution-contract.md),
+> [mandate](docs/architecture/LearningOS-v2-preliminary.md) and
+> [fidelity baseline](docs/ui-reference/learnharness-fidelity.md).
+> The Python setup below describes preserved legacy functionality, not the v2 target.
+
 Planning package for the MVP of a course-aware learning OS.
 
 The MVP goal is intentionally narrow:
