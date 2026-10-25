@@ -1,0 +1,32 @@
+[
+  {
+    "run": 0,
+    "pass": true,
+    "killedPid": 23146,
+    "ackAt": "2026-10-25T22:19:11.075Z",
+    "eventDigest": "8630b031d37e9689c65984e3f1b9a647ee7d2caff503c81f253c7f960fa1f322",
+    "eventCount": 4,
+    "receipts": 3,
+    "browser": "155.0.8059.79"
+  },
+  {
+    "run": 1,
+    "pass": true,
+    "killedPid": 23536,
+    "ackAt": "2026-10-25T22:19:12.155Z",
+    "eventDigest": "78a46e5921ebe94bdf1856b76b275747dd4798e899350a4200f6841a7b1eac4c",
+    "eventCount": 4,
+    "receipts": 3,
+    "browser": "155.0.8059.79"
+  },
+  {
+    "run": 2,
+    "pass": true,
+    "killedPid": 23905,
+    "ackAt": "2026-10-25T22:19:13.291Z",
+    "eventDigest": "96745325696f27f47fb382ea265ce7fd9d8d6e23066d25649f184546b8f4c6e2",
+    "eventCount": 4,
+    "receipts": 3,
+    "browser": "155.0.8059.79"
+  }
+]

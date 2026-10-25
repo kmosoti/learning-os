@@ -1,0 +1,18 @@
+- link "Skip to learning workspace":
+  - /url: "#main"
+- main:
+  - button "Open navigation": ☰
+  - text: YOUR KNOWLEDGE
+  - heading "A place to connect ideas" [level=1]
+  - button "Sources"
+  - button "Plan ↗"
+  - region "Knowledge graph":
+    - text: RUST FOUNDATIONS 3 assertions · 1 joint argument
+    - img "Ownership and borrow availability jointly support mutable access": Owner available No overlapping shared borrow AND Mutable access
+    - group: Explore the graph as a list
+    - text: WHAT DO YOU WANT TO UNDERSTAND?
+    - heading "Why does the borrow checker stop me?" [level=2]
+    - paragraph: Explore ownership, make a prediction, and test it against a small Rust program.
+    - text: Rust Book · 3 prerequisites · local-first
+    - button "Start learning →"
+  - status: Local journal ready · tab drafts are retained separately

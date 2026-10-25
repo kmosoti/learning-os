@@ -1,0 +1,1 @@
+{"name":"chromium-service-worker-install-failure-is-explicit","pass":true,"detail":{"cacheFailureReported":true,"localJournalAvailable":true,"injection":"ServiceWorkerContainer.register rejected"}}

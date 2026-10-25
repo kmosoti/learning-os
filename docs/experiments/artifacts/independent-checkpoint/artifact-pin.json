@@ -1,0 +1,316 @@
+{
+  "source_head": "270629a2e5ece44912c28c5c83969a0fd6c4a2c0",
+  "source_files": {
+    "Cargo.lock": "f4bc2dcd3b57fce53c1f95325a57049e8f76d31fa590dc39a256c71de91b1f12",
+    "Cargo.toml": "ff2799baafb6427ff8a0f519fdae5b39e249ced96e024806166c625c6d867940",
+    "apps/server/Cargo.toml": "5b5c93be770a322ad9b5daf90daa60ffb160814707feeae753ec76e0446319df",
+    "apps/server/src/journal.rs": "98d4eb1097bfd224f1a6703d615f1d9a4135db07e7b27124cefae547ce4d79e8",
+    "apps/server/src/lib.rs": "7ec7c41f6b48397a2009af2526389c666282cc1a1b6c6e9240bb06cb71220579",
+    "apps/server/src/main.rs": "295eec031a7406598489161f57e5f7e52305a65660d48d392727e1eedbf9718a",
+    "apps/web/Cargo.toml": "f6a3f3774bfc40d18a06081b913cf3eb7b88dda43297a365bf1e5698f6609a5c",
+    "apps/web/public/app.css": "61fc6d9a03797d3127035ef373fcbbd29e5d562483f62fc8c2bba84d93c95d8d",
+    "apps/web/public/bootstrap.js": "67bdb63f9eae31e6b48428d34d7426f33d578c1a87ddc34d48528f0fcac1f875",
+    "apps/web/public/fonts/CMU-OFL.txt": "73273dffdefe2e5f1e138084d4a4b65b1c50df2ab0179f78484f31beefe30d84",
+    "apps/web/public/fonts/README.txt": "bc310202887096ecda9ccd37d1a988076474e4e57900757baec5eb4fe725e156",
+    "apps/web/public/fonts/cmunbx.ttf": "643afcc8fc9a526cd060f37459f050f03156f0a593779d87b8ad21f937757a31",
+    "apps/web/public/fonts/jetbrains-mono-LICENSE": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b",
+    "apps/web/public/fonts/jetbrains-mono-latin-400-normal.woff2": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+    "apps/web/public/fonts/jetbrains-mono-upstream-manifest.json": "e3e342deafe728121306398cc3f1d7648452adee9094367f159e9b83091319a3",
+    "apps/web/public/fonts/source-sans-3-LICENSE": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+    "apps/web/public/fonts/source-sans-3-latin-400-normal.woff2": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b",
+    "apps/web/public/fonts/source-sans-3-latin-600-normal.woff2": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38",
+    "apps/web/public/fonts/source-sans-3-upstream-manifest.json": "a51cdf7d681b18513c2661e120bf2e44ba7444223f4c07361b3156c55015dc6d",
+    "apps/web/public/icon-192.png": "95d1d7cddc02360dcfb0984a216550f4d9532814e2b8a9ed538153caec7e94f8",
+    "apps/web/public/icon-512.png": "d136f4c1e9985ff1003649294b7ffd3b99005db5ae70f7463d58de75de212f32",
+    "apps/web/public/icon.svg": "23cb7130c286f33f3cc4fad8012576121532fb6d62159a3edf8c99cfecf9e4a9",
+    "apps/web/public/manifest.webmanifest": "d881d9a16304dc780baba0ab194e0dfd9c5059cc87c12fa688127f25cbc099d0",
+    "apps/web/service-worker.template.js": "79d8baeda8021023fdaf1190603421409fab7d74e5ffc1aace22a653615d1e02",
+    "apps/web/src/browser.rs": "e9ef29fa3becb08a4a4580c07a142b84168f86d47329d4493dee59b66866527b",
+    "apps/web/src/graph.rs": "7e7c501220ca63e581ffe2c66b686bdc761515522c5d0df1efe081d318fae6e1",
+    "apps/web/src/lib.rs": "3df5a40229d00c86aa77bf03ed9970021c7fb846d9dd4082ebd4cc41b4e00497",
+    "apps/web/src/store.rs": "241e51c81e94c2828126e430f47856292073d853ae996f85ad10a63aa6b92d59",
+    "crates/application/Cargo.toml": "7e342f97962fe392e0fef24797f4a26768393dcccb3b14bd52297647b15e6b81",
+    "crates/application/examples/bounded_journal.rs": "d62564de8240b0079cfdbef776d653e94838cecd896c888a66c052be4b046bb8",
+    "crates/application/src/lib.rs": "1c39a809f18cc1eb9d4191fec5c9021d12cf7603edd6041893f5be3ce72b15ec",
+    "crates/application/tests/ports.rs": "84cb69e4faab5ff1f98d6ca01144f3234933e46cfaa8817c91ca3312cc6b6c32",
+    "crates/domain/Cargo.toml": "75e660363331849f7601f03971ab9f3694b8c49f73a0aaf1308d8f95e32d0e11",
+    "crates/domain/examples/replay_fixture.rs": "4fa967b86158c98f99b5442aa09864ab3bc95e81a59ac6aa5a8a36369a24107d",
+    "crates/domain/src/epistemic.rs": "602971b58e3f3e39e8ffba5f0ab073c4c7da7e4ae0d36f8bea51752c644d4935",
+    "crates/domain/src/fixture.rs": "3a55773f95229d651a9f846ef399e8b83a0bd59fb53dfc9bee000dd947b303cd",
+    "crates/domain/src/lib.rs": "65933d500ca015bdb6ac254aa1af89a54941ba4b3aa11f2bb82eb541c14b51bd",
+    "crates/domain/src/session.rs": "c183bfad72a3b2d139ebd6b986415c37bfd0a8981fe7c3907596e5961d021c62",
+    "crates/domain/tests/compiler_fixture.rs": "82690f5866c3cb9a7b4ba4988521c88a981b943fa25b600fa8bcd62756f32f4a",
+    "crates/domain/tests/invariants.rs": "9ca6fef418c0df9b1cf3e80fc5030d1a717cd1bf9552e8bcb7f19614bf14fd87",
+    "crates/protocol/Cargo.toml": "f5fda09f520189f54af30cd39bd5df2030d0f12d850f4921c8e6e2a9481ea370",
+    "crates/protocol/src/lib.rs": "850fea456641eecfdf9fe39ee648361b055d4da3c284ec09e820e205c17514a2",
+    "fixtures/rust/last_use.rs": "5b9b93685f1518edfec865abef2964837b1ccff40fca50a25a54511d5f097667",
+    "fixtures/rust/move.rs": "1f695cc06772637a1fe1fb3e50f6d62b9facfb2f2f85255996347a9ccb3443ca",
+    "fixtures/rust/mutable_overlap.rs": "7b692d38ed106892bfed1cdab70aea374bb36e73d31ecdec9eac8b551280dbb0",
+    "fixtures/rust/non_mutable.rs": "036d1c0ecfff9aa4f823fac0cb549553d6adb9588c6e681cd3a4878615ca71f9",
+    "fixtures/rust/overlap.rs": "85de400f9f3a3c5e52421d08416daccc8d1a01a03d07f4ace80a895ad78e1a3e",
+    "fixtures/rust/shared.rs": "c39dc4038aec91291494af187df5004b4610ad92b835b5ff4eaa14c7bfdbc04a",
+    "rust-toolchain.toml": "6225fcc94ef493fa5d10b39e0adb3ad6fea6c3c70d19746296370046d8866f9f",
+    "scripts/build-v2.sh": "c65320b41ef1804a0ee44931fc8adc11ffa7486a3ecf592bcd3a279731498201",
+    "scripts/check-v2.sh": "5cb1d3abfbe3a44ff9dee36999c1de1dd3366cb837ade83beee6aab6d2435569",
+    "sources/rust-book/LICENSE-APACHE": "0f2763086f981043fb18879abfa15e75ecfc188219ef9eba4483f45ce7438e1c",
+    "sources/rust-book/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "sources/rust-book/ch04-01-what-is-ownership.md": "873724c6862ad0cc447becf0e818eb39a324c5d4bfa26ef721286aae1941c0ba",
+    "sources/rust-book/ch04-02-references-and-borrowing.md": "7d983eec6235630df6e85c7a5b4cfbdfc7c380c780f60774df65ba2fa1d05ca4",
+    "sources/rust-book/manifest.json": "c74e838b41935797cd7ec413891c7e74d9f321eabe10c8bfd73b46489be4a94c"
+  },
+  "source_tree_digest": "1a3eec2d6b130774c34202bdb440d8efef553352a8aba3dc20fe2dd332d4ddcb",
+  "artifacts": {
+    "learningos-coherent-review1": {
+      "assets/app.css": {
+        "bytes": 17645,
+        "sha256": "61fc6d9a03797d3127035ef373fcbbd29e5d562483f62fc8c2bba84d93c95d8d"
+      },
+      "assets/app.css.gz": {
+        "bytes": 4868,
+        "sha256": "54b670bc72995f997cf7aacc8e340cdc20b5bd5e70d9a50dd1ab36c80f716d5a"
+      },
+      "assets/bootstrap.js": {
+        "bytes": 361,
+        "sha256": "67bdb63f9eae31e6b48428d34d7426f33d578c1a87ddc34d48528f0fcac1f875"
+      },
+      "assets/bootstrap.js.gz": {
+        "bytes": 254,
+        "sha256": "d131f3f01ddbfbc4aae4d102202097fb8da7d8081d9350aa2b738c815b4f7f10"
+      },
+      "assets/fonts/CMU-OFL.txt": {
+        "bytes": 4820,
+        "sha256": "73273dffdefe2e5f1e138084d4a4b65b1c50df2ab0179f78484f31beefe30d84"
+      },
+      "assets/fonts/README.txt": {
+        "bytes": 739,
+        "sha256": "bc310202887096ecda9ccd37d1a988076474e4e57900757baec5eb4fe725e156"
+      },
+      "assets/fonts/cmunbx.ttf": {
+        "bytes": 221904,
+        "sha256": "643afcc8fc9a526cd060f37459f050f03156f0a593779d87b8ad21f937757a31"
+      },
+      "assets/fonts/cmunbx.ttf.gz": {
+        "bytes": 121179,
+        "sha256": "fee81abf68b8286a7c330d87b3a49e147a1400ac3e13e06e92f658161ce71fb5"
+      },
+      "assets/fonts/jetbrains-mono-LICENSE": {
+        "bytes": 4524,
+        "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+      },
+      "assets/fonts/jetbrains-mono-latin-400-normal.woff2": {
+        "bytes": 21168,
+        "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+      },
+      "assets/fonts/jetbrains-mono-upstream-manifest.json": {
+        "bytes": 1606,
+        "sha256": "e3e342deafe728121306398cc3f1d7648452adee9094367f159e9b83091319a3"
+      },
+      "assets/fonts/source-sans-3-LICENSE": {
+        "bytes": 4314,
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+      },
+      "assets/fonts/source-sans-3-latin-400-normal.woff2": {
+        "bytes": 15696,
+        "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b"
+      },
+      "assets/fonts/source-sans-3-latin-600-normal.woff2": {
+        "bytes": 15668,
+        "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38"
+      },
+      "assets/fonts/source-sans-3-upstream-manifest.json": {
+        "bytes": 1595,
+        "sha256": "a51cdf7d681b18513c2661e120bf2e44ba7444223f4c07361b3156c55015dc6d"
+      },
+      "assets/icon-192.png": {
+        "bytes": 1278,
+        "sha256": "95d1d7cddc02360dcfb0984a216550f4d9532814e2b8a9ed538153caec7e94f8"
+      },
+      "assets/icon-512.png": {
+        "bytes": 7812,
+        "sha256": "d136f4c1e9985ff1003649294b7ffd3b99005db5ae70f7463d58de75de212f32"
+      },
+      "assets/icon.svg": {
+        "bytes": 263,
+        "sha256": "23cb7130c286f33f3cc4fad8012576121532fb6d62159a3edf8c99cfecf9e4a9"
+      },
+      "assets/icon.svg.gz": {
+        "bytes": 194,
+        "sha256": "3fb6b2d493b716d1e29c4922f94b6ae3caea9c038dc97e47a3aca93c64dbcc1a"
+      },
+      "assets/manifest.webmanifest": {
+        "bytes": 484,
+        "sha256": "d881d9a16304dc780baba0ab194e0dfd9c5059cc87c12fa688127f25cbc099d0"
+      },
+      "assets/manifest.webmanifest.gz": {
+        "bytes": 263,
+        "sha256": "2f11de1e960aa53f24a86713d861bf3decce707655204b8e80ac54a346914260"
+      },
+      "assets/pkg/learningos_web.d.ts": {
+        "bytes": 6513,
+        "sha256": "0be0822a27886e1b78a897d2121f1c31cda7c4e1b425261804114fa4077d9845"
+      },
+      "assets/pkg/learningos_web.js": {
+        "bytes": 60012,
+        "sha256": "9c2999bb9c1e73537ed51a9e34d678a42809b2a07be356f1be2b4d7bb483f7e2"
+      },
+      "assets/pkg/learningos_web.js.gz": {
+        "bytes": 10223,
+        "sha256": "0c6fe8c244cbea6090f87549854ea75c31db9c63d2c3235bf891955eef12b86b"
+      },
+      "assets/pkg/learningos_web_bg.wasm": {
+        "bytes": 1092059,
+        "sha256": "e786715738ab817bd84041953e672ac79a21d96536891d52005934ea80cda968"
+      },
+      "assets/pkg/learningos_web_bg.wasm.d.ts": {
+        "bytes": 3807,
+        "sha256": "dccb000f6fb25692e63c6620ade931aaa7ccf3798ab40e9705cfbb206f28075d"
+      },
+      "assets/pkg/learningos_web_bg.wasm.gz": {
+        "bytes": 362198,
+        "sha256": "f37081b6f3588f57749a93b801ba49ca0b3471515a67ee86af1c33bf84f7ddd7"
+      },
+      "assets/sw.js": {
+        "bytes": 1262,
+        "sha256": "d26895d3fd8861a66369a19d27f183110f65a3eb84a1d6b5887d988e2a8f107e"
+      },
+      "assets/sw.js.gz": {
+        "bytes": 628,
+        "sha256": "299725067ac6c5f6c6d437cd7c84dc084fd49de077b179a17f267a0e51cdedb9"
+      },
+      "build-manifest.txt": {
+        "bytes": 676,
+        "sha256": "b60785d6e679736d0ceeb5674cf5a1dbae0c8234529e2d7db5981d46406e80f5"
+      },
+      "learningos-server": {
+        "bytes": 8816912,
+        "sha256": "4da02f99d4e44d802e4ac2733b637e28786d758e116ec6fed40b95e6a8e87461"
+      }
+    },
+    "learningos-split-review1": {
+      "assets/app.css": {
+        "bytes": 17645,
+        "sha256": "61fc6d9a03797d3127035ef373fcbbd29e5d562483f62fc8c2bba84d93c95d8d"
+      },
+      "assets/app.css.gz": {
+        "bytes": 4868,
+        "sha256": "54b670bc72995f997cf7aacc8e340cdc20b5bd5e70d9a50dd1ab36c80f716d5a"
+      },
+      "assets/bootstrap.js": {
+        "bytes": 361,
+        "sha256": "67bdb63f9eae31e6b48428d34d7426f33d578c1a87ddc34d48528f0fcac1f875"
+      },
+      "assets/bootstrap.js.gz": {
+        "bytes": 254,
+        "sha256": "d131f3f01ddbfbc4aae4d102202097fb8da7d8081d9350aa2b738c815b4f7f10"
+      },
+      "assets/fonts/CMU-OFL.txt": {
+        "bytes": 4820,
+        "sha256": "73273dffdefe2e5f1e138084d4a4b65b1c50df2ab0179f78484f31beefe30d84"
+      },
+      "assets/fonts/README.txt": {
+        "bytes": 739,
+        "sha256": "bc310202887096ecda9ccd37d1a988076474e4e57900757baec5eb4fe725e156"
+      },
+      "assets/fonts/cmunbx.ttf": {
+        "bytes": 221904,
+        "sha256": "643afcc8fc9a526cd060f37459f050f03156f0a593779d87b8ad21f937757a31"
+      },
+      "assets/fonts/cmunbx.ttf.gz": {
+        "bytes": 121179,
+        "sha256": "fee81abf68b8286a7c330d87b3a49e147a1400ac3e13e06e92f658161ce71fb5"
+      },
+      "assets/fonts/jetbrains-mono-LICENSE": {
+        "bytes": 4524,
+        "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+      },
+      "assets/fonts/jetbrains-mono-latin-400-normal.woff2": {
+        "bytes": 21168,
+        "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+      },
+      "assets/fonts/jetbrains-mono-upstream-manifest.json": {
+        "bytes": 1606,
+        "sha256": "e3e342deafe728121306398cc3f1d7648452adee9094367f159e9b83091319a3"
+      },
+      "assets/fonts/source-sans-3-LICENSE": {
+        "bytes": 4314,
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+      },
+      "assets/fonts/source-sans-3-latin-400-normal.woff2": {
+        "bytes": 15696,
+        "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b"
+      },
+      "assets/fonts/source-sans-3-latin-600-normal.woff2": {
+        "bytes": 15668,
+        "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38"
+      },
+      "assets/fonts/source-sans-3-upstream-manifest.json": {
+        "bytes": 1595,
+        "sha256": "a51cdf7d681b18513c2661e120bf2e44ba7444223f4c07361b3156c55015dc6d"
+      },
+      "assets/icon-192.png": {
+        "bytes": 1278,
+        "sha256": "95d1d7cddc02360dcfb0984a216550f4d9532814e2b8a9ed538153caec7e94f8"
+      },
+      "assets/icon-512.png": {
+        "bytes": 7812,
+        "sha256": "d136f4c1e9985ff1003649294b7ffd3b99005db5ae70f7463d58de75de212f32"
+      },
+      "assets/icon.svg": {
+        "bytes": 263,
+        "sha256": "23cb7130c286f33f3cc4fad8012576121532fb6d62159a3edf8c99cfecf9e4a9"
+      },
+      "assets/icon.svg.gz": {
+        "bytes": 194,
+        "sha256": "3fb6b2d493b716d1e29c4922f94b6ae3caea9c038dc97e47a3aca93c64dbcc1a"
+      },
+      "assets/manifest.webmanifest": {
+        "bytes": 484,
+        "sha256": "d881d9a16304dc780baba0ab194e0dfd9c5059cc87c12fa688127f25cbc099d0"
+      },
+      "assets/manifest.webmanifest.gz": {
+        "bytes": 263,
+        "sha256": "2f11de1e960aa53f24a86713d861bf3decce707655204b8e80ac54a346914260"
+      },
+      "assets/pkg/learningos_web.d.ts": {
+        "bytes": 6662,
+        "sha256": "c4a541559df447b28669e126432068220cbd11b8a8977d722dd44dba263fe549"
+      },
+      "assets/pkg/learningos_web.js": {
+        "bytes": 60162,
+        "sha256": "89b4a63662573023c92b58e36f99e8703d5442678258540586dd70c08094a3ed"
+      },
+      "assets/pkg/learningos_web.js.gz": {
+        "bytes": 10254,
+        "sha256": "b33206d2feae66cde62b284eac59abb2fdcc11b7f85e64d443da8be74184d689"
+      },
+      "assets/pkg/learningos_web_bg.wasm": {
+        "bytes": 1093115,
+        "sha256": "9c8e3715ef9c2e5bf37d466a3cefc45612622afb6593eee35a7380f506f9d77d"
+      },
+      "assets/pkg/learningos_web_bg.wasm.d.ts": {
+        "bytes": 3877,
+        "sha256": "3b6f94298eeb9d3d210543b8f0a7457e0e44359d49aaa2855efaec77922a9fb4"
+      },
+      "assets/pkg/learningos_web_bg.wasm.gz": {
+        "bytes": 362333,
+        "sha256": "e5168726fd6b913b852ed4757bdbcf1b0d5a3c9b818bf3a3b0e34a970b466d66"
+      },
+      "assets/sw.js": {
+        "bytes": 1262,
+        "sha256": "f4283984f4b1c7e8343c8977024906106774ab4acc8153eb91752b034561d645"
+      },
+      "assets/sw.js.gz": {
+        "bytes": 631,
+        "sha256": "23f92c127ecaac03e85130f007938ba717121c1ebe7ec1c42ca53e99004e5472"
+      },
+      "build-manifest.txt": {
+        "bytes": 661,
+        "sha256": "ee241b86ec6752988419235da88ea4029e4a2c0daabb538e0b4c3370b91ad34a"
+      },
+      "learningos-server": {
+        "bytes": 8821192,
+        "sha256": "52f9d67b3429e911d388a757b4a6de3aa7a66f6641dad7d6c1a979ae573a3e96"
+      }
+    }
+  }
+}

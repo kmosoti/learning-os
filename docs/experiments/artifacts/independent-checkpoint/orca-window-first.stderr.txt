@@ -1,0 +1,8 @@
+
+(orca:17760): dbind-WARNING **: 17:09:19.554: Attempt to enable ATSPI_DEVICE_CAP_POINTER_MONITOR, but at-spi2-core was built without libXRes
+X Error of failed request:  BadWindow (invalid Window parameter)
+  Major opcode of failed request:  131 (XInputExtension)
+  Minor opcode of failed request:  54 ()
+  Resource id in failed request:  0x1
+  Serial number of failed request:  22
+  Current serial number in output stream:  22
