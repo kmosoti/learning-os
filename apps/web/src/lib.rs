@@ -163,13 +163,54 @@ fn Navigation(ui: RwSignal<Ui>) -> impl IntoView {
 #[component]
 fn Workspace(ui: RwSignal<Ui>) -> impl IntoView {
     let page = Memo::new(move |_| ui.with(|u| (u.ready, u.home)));
-    view! { <main id="main" tabindex="-1" class="workspace" inert=move || !ui.with(|u|u.sheet.is_empty()) || ui.with(|u|u.nav) data-ready=move ||ui.with(|u|u.ready).to_string() data-phase=move ||format!("{:?}",ui.with(|u|u.session.phase)) data-variant=if cfg!(feature="split-islands"){"split"}else{"coherent"}><header class="topbar"><button class="icon mobile-only" aria-label="Open navigation" on:click=move |_| {ui.update(|u|u.nav=true);#[cfg(feature="hydrate")] browser::focus_sheet();}>"☰"</button><div class="title-block"><span class="eyebrow">{move || if ui.with(|u|u.home) {"YOUR KNOWLEDGE"} else {"GUIDED SESSION / RUST"}}</span><h1>{move || if ui.with(|u|u.home) {"A place to connect ideas"} else {"Ownership & borrowing"}}</h1></div><div class="top-actions"><button class="quiet" disabled=move ||ui.with(|u|u.busy) on:click=move |_| sheet(ui,"source")>"Sources"</button><button class="quiet" on:click=move |_| sheet(ui,"plan")>"Plan ↗"</button><span class="local-pill">"LOCAL"</span></div></header>
+    view! { <main id="main" tabindex="-1" class="workspace" inert=move || !ui.with(|u|u.sheet.is_empty()) || ui.with(|u|u.nav) data-ready=move ||ui.with(|u|u.ready).to_string() data-phase=move ||format!("{:?}",ui.with(|u|u.session.phase)) data-variant=if cfg!(feature="split-islands"){"split"}else{"coherent"}><header class="topbar"><button class="icon mobile-only" aria-label="Open navigation" on:click=move |_| {ui.update(|u|u.nav=true);#[cfg(feature="hydrate")] browser::focus_sheet();}>"☰"</button><div class="title-block"><span class="eyebrow">{move || if ui.with(|u|u.home) {"YOUR KNOWLEDGE"} else {"GUIDED SESSION / RUST"}}</span><h1>{move || if ui.with(|u|u.home) {"A place to connect ideas"} else {"Ownership & borrowing"}}</h1></div><div class="top-actions"><button class="quiet" disabled=move ||ui.with(|u|u.busy) on:click=move |_| sheet(ui,"source")>"Sources"</button><button class="quiet" on:click=move |_| sheet(ui,"plan")>"Plan ↗"</button><span class="local-pill">"LOCAL"</span></div></header><AppearanceControls/>
       <div class="boot" role="status" hidden=move || ui.with(|u|u.ready)>{move || ui.with(|u|u.status.clone())}</div>
       <div class="error-banner" role="alert" hidden=move || ui.with(|u|u.error.is_empty())>{move || ui.with(|u|u.error.clone())}<button class="quiet" on:click=move |_| {#[cfg(feature="hydrate")] browser::reload(ui);}>"Reload local state"</button></div>
       {move || if !page.get().0 { None } else if page.get().1 {Some(view!{<GraphHome ui=ui/>}.into_any())} else {Some(view!{<SessionView ui=ui/>}.into_any())}}
       <footer class="save-status" role="status"><span class="status-dot"></span>{move || ui.with(|u|u.status.clone())}</footer>
     </main><Sheet ui=ui/> }
 }
+#[component]
+fn AppearanceControls() -> impl IntoView {
+    let theme = RwSignal::new("paper".to_string());
+    let size = RwSignal::new("20".to_string());
+    #[cfg(feature = "hydrate")]
+    {
+        let (saved_theme, saved_size) = browser::appearance();
+        browser::apply_appearance(&saved_theme, &saved_size);
+        theme.set(saved_theme);
+        size.set(saved_size);
+    }
+    view! {
+        <section class="appearance-bar" aria-label="Reading appearance">
+            <div class="appearance-control"><label for="color-scheme">"Color scheme"</label>
+                <select id="color-scheme" prop:value=move ||theme.get() on:change=move |ev| {
+                    theme.set(event_target_value(&ev));
+                    #[cfg(feature = "hydrate")]
+                    browser::apply_appearance(&theme.get_untracked(), &size.get_untracked());
+                }>
+                    <option value="paper">"Warm Paper"</option>
+                    <option value="dark">"Soft Dark"</option>
+                    <option value="contrast">"High Contrast"</option>
+                </select>
+            </div>
+            <div class="appearance-control"><label for="reading-size">"Text size"</label>
+                <select id="reading-size" prop:value=move ||size.get() on:change=move |ev| {
+                    size.set(event_target_value(&ev));
+                    #[cfg(feature = "hydrate")]
+                    browser::apply_appearance(&theme.get_untracked(), &size.get_untracked());
+                }>
+                    <option value="18">"18 px"</option>
+                    <option value="20" selected>"20 px"</option>
+                    <option value="22">"22 px"</option>
+                    <option value="24">"24 px"</option>
+                </select>
+            </div>
+            <span class="appearance-note">"Choose what feels clearest. Changes apply instantly."</span>
+        </section>
+    }
+}
+
 #[derive(Clone)]
 struct GraphState {
     x: f64,
@@ -238,7 +279,7 @@ fn SessionView(ui: RwSignal<Ui>) -> impl IntoView {
         Phase::Goal => view!{<div class="question-card"><h3>"Choose a learning goal"</h3><p>"Understand when a String moves and when a reference borrows it."</p><Action ui=ui command=Command::ChooseGoal{goal:"Understand ownership and borrowing".into()} label="Build my plan →"/></div>}.into_any(),
         Phase::Plan => view!{<div class="question-card"><span class="eyebrow">"YOUR PREREQUISITE PLAN"</span><h3>"One idea builds on another"</h3><PlanDiagram/><p>"Start with a prediction. Then read, check, and decide what deserves another look."</p><Action ui=ui command=Command::ConfirmPlan label="Make a prediction →"/></div>}.into_any(),
         Phase::Predict | Phase::Check => view!{<QuestionCard ui=ui/>}.into_any(),
-        Phase::Teach => {let q=question(&s.question).expect("fixture question");view!{<article class="teaching"><div class="message-label">"LEARNINGOS / SOURCE-GROUNDED EXPLANATION"</div><h3>"Follow the owner, then the borrow"</h3><p>{q.explanation}</p><pre><code>{q.code}</code></pre><button class="source-inline" on:click=move |_| sheet(ui,"source")>"Read the pinned source span ↗"</button><label for="reading">"Thinking while reading"<span>"Optional · saved separately from answer reasoning"</span></label><textarea disabled=move ||ui.with(|u|u.busy) id="reading" maxlength="4096" rows="3" prop:value=move || ui.with(|u|u.draft.reading.clone()) on:input=move |ev| draft(ui,|d|d.reading=event_target_value(&ev)) placeholder="What clicked? What remains unclear?"></textarea><Action ui=ui command=Command::FinishReading{thoughts:ui.get_untracked().draft.reading} label="I’m ready to check →"/></article>}.into_any()},
+        Phase::Teach => {let q=question(&s.question).expect("fixture question");view!{<article class="teaching"><div class="message-label">"LEARNINGOS / SOURCE-GROUNDED EXPLANATION"</div><h3>"Follow the owner, then the borrow"</h3><p>{q.explanation}</p><pre tabindex="0" role="region" aria-label="Rust code example"><code>{q.code}</code></pre><button class="source-inline" on:click=move |_| sheet(ui,"source")>"Read the pinned source span ↗"</button><label for="reading">"Thinking while reading"<span>"Optional · saved separately from answer reasoning"</span></label><textarea disabled=move ||ui.with(|u|u.busy) id="reading" maxlength="4096" rows="3" prop:value=move || ui.with(|u|u.draft.reading.clone()) on:input=move |ev| draft(ui,|d|d.reading=event_target_value(&ev)) placeholder="What clicked? What remains unclear?"></textarea><Action ui=ui command=Command::FinishReading{thoughts:ui.get_untracked().draft.reading} label="I’m ready to check →"/></article>}.into_any()},
         Phase::CheckClosed => view!{<div class="question-card check-closed"><span class="eyebrow">"COMPREHENSION CHECK"</span><h3>"Can you apply the idea yourself?"</h3><p>"Take a moment to recall it before opening the question."</p><Action ui=ui command=Command::OpenCheck label="Open check →"/></div>}.into_any(),
         Phase::Evidence => view!{<Evidence ui=ui/><div class="dock-actions"><Action ui=ui command=Command::ReviewEvidence label="Choose the next step →"/></div>}.into_any(),
         Phase::NextAction => {let next=s.next_action();view!{<div class="question-card"><span class="eyebrow">"ONE NEXT ACTION"</span><h3>{action_label(next.kind)}</h3><p>{next.reason}</p><Action ui=ui command=Command::Continue{override_kind:None} label="Continue →"/><details class="override"><summary>"Choose another approach"</summary><Action ui=ui command=Command::Continue{override_kind:Some(ActionKind::Repair)} label="Review the prerequisite"/><Action ui=ui command=Command::Continue{override_kind:Some(ActionKind::UnaidedRetry)} label="Try again without hints"/></details></div>}.into_any()},
@@ -267,7 +308,7 @@ fn QuestionCard(ui: RwSignal<Ui>) -> impl IntoView {
     let s = ui.get_untracked().session;
     let q = question(&s.question).expect("fixture question");
     let prediction = s.phase == Phase::Predict;
-    view! {<form class="question-card" on:submit=move |ev| {ev.prevent_default();let d=ui.get_untracked().draft;if let Some(answer)=d.answer {send(ui,Command::Answer{answer,confidence:if d.confidence.trim().is_empty(){None}else{d.confidence.parse().ok()},reasoning:d.reasoning});}}><div class="card-top"><span class="eyebrow">{if prediction {"PREDICTION / BEFORE THE EXPLANATION"} else {"CHECK / APPLY WHAT YOU READ"}}</span><span class="question-number">{format!("{} · v{}",q.id,q.version)}</span></div><h3>"Will this program compile?"</h3><p>{if prediction {"Commit to a prediction, or choose “I don’t know yet”. It is not a mastery judgment."}else{"Think through the owner and each reference’s last use."}}</p><pre><code>{q.code}</code></pre><fieldset disabled=move ||ui.with(|u|u.busy)><legend>"Your answer"</legend>{[Answer::Compiles,Answer::DoesNotCompile,Answer::Unknown].into_iter().map(|answer|view!{<label class="choice"><input type="radio" name="answer" value=answer.label() prop:checked=move || ui.with(|u|u.draft.answer)==Some(answer) on:change=move |_| draft(ui,|d|d.answer=Some(answer))/><span>{answer.label()}</span></label>}).collect_view()}</fieldset><div class="thinking-fields"><label for="reasoning">"Your reasoning"<span>"Optional · retained, not semantically graded"</span></label><textarea disabled=move ||ui.with(|u|u.busy) id="reasoning" maxlength="4096" rows="2" prop:value=move || ui.with(|u|u.draft.reasoning.clone()) on:input=move |ev| draft(ui,|d|d.reasoning=event_target_value(&ev)) placeholder="Trace what happens to the value…"></textarea><label class="confidence" for="confidence">"Confidence"<span>"Optional"</span><input disabled=move ||ui.with(|u|u.busy) id="confidence" type="number" min="0" max="100" placeholder="—" prop:value=move || ui.with(|u|u.draft.confidence.clone()) on:input=move |ev| draft(ui,|d|d.confidence=event_target_value(&ev))/><span>"%"</span></label></div>
+    view! {<form class="question-card" on:submit=move |ev| {ev.prevent_default();let d=ui.get_untracked().draft;if let Some(answer)=d.answer {send(ui,Command::Answer{answer,confidence:if d.confidence.trim().is_empty(){None}else{d.confidence.parse().ok()},reasoning:d.reasoning});}}><div class="card-top"><span class="eyebrow">{if prediction {"PREDICTION / BEFORE THE EXPLANATION"} else {"CHECK / APPLY WHAT YOU READ"}}</span><span class="question-number">{format!("{} · v{}",q.id,q.version)}</span></div><h3>"Will this program compile?"</h3><p>{if prediction {"Commit to a prediction, or choose “I don’t know yet”. It is not a mastery judgment."}else{"Think through the owner and each reference’s last use."}}</p><pre tabindex="0" role="region" aria-label="Rust code example"><code>{q.code}</code></pre><fieldset disabled=move ||ui.with(|u|u.busy)><legend>"Your answer"</legend>{[Answer::Compiles,Answer::DoesNotCompile,Answer::Unknown].into_iter().map(|answer|view!{<label class="choice"><input type="radio" name="answer" value=answer.label() prop:checked=move || ui.with(|u|u.draft.answer)==Some(answer) on:change=move |_| draft(ui,|d|d.answer=Some(answer))/><span>{answer.label()}</span></label>}).collect_view()}</fieldset><div class="thinking-fields"><label for="reasoning">"Your reasoning"<span>"Optional · retained, not semantically graded"</span></label><textarea disabled=move ||ui.with(|u|u.busy) id="reasoning" maxlength="4096" rows="2" prop:value=move || ui.with(|u|u.draft.reasoning.clone()) on:input=move |ev| draft(ui,|d|d.reasoning=event_target_value(&ev)) placeholder="Trace what happens to the value…"></textarea><label class="confidence" for="confidence">"Confidence"<span>"Optional"</span><input disabled=move ||ui.with(|u|u.busy) id="confidence" type="number" min="0" max="100" placeholder="—" prop:value=move || ui.with(|u|u.draft.confidence.clone()) on:input=move |ev| draft(ui,|d|d.confidence=event_target_value(&ev))/><span>"%"</span></label></div>
     {(!prediction).then(|| view!{<div class="hint-area"><button type="button" class="quiet" disabled={move || ui.with(|u|u.busy)||ui.with(|u|u.session.hints)>=2} on:click=move |_| send(ui,Command::Hint)> {move || format!("Hint {}/2",ui.with(|u|u.session.hints))} </button>{move || (ui.with(|u|u.session.hints)>0).then(||view!{<p>"Track whether ownership moved, then locate the reference’s last use."</p>})}{move || (ui.with(|u|u.session.hints)>1).then(||view!{<p>"A live shared borrow and a mutable borrow cannot overlap. A shared reference does not take ownership."</p>})}</div>})}
     <div class="dock-actions"><span>"Saved as a distinct observation"</span><button type="submit" class="primary" disabled=move || ui.with(|u|u.busy)||ui.with(|u|u.draft.answer).is_none()>{if prediction {"Save prediction →"}else{"Commit answer →"}}</button></div></form>}
 }

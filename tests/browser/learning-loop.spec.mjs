@@ -75,7 +75,7 @@ for(const [width,height]of [[1440,900],[1280,720],[390,844],[360,740]])test(`vie
   await page.getByRole('button',{name:'Sources',exact:true}).click();await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.getByRole('button',{name:'Sources',exact:true})).toBeFocused();
   await page.screenshot({path:info.outputPath(`prediction-${width}x${height}.png`),fullPage:true});
   const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(results.violations).toEqual([]);
-  await page.emulateMedia({reducedMotion:'reduce'});await page.evaluate(()=>document.documentElement.style.fontSize='32px');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.emulateMedia({reducedMotion:'reduce'});await page.evaluate(()=>{const root=document.documentElement;root.style.fontSize=`${parseFloat(getComputedStyle(root).fontSize)*2}px`;});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 
 test('hint/source consultation retains typed draft and source-assisted checks never count as unaided',async({page})=>{
@@ -95,4 +95,37 @@ test('malformed existing local records fail closed instead of appearing empty',a
   await page.goto('/');await ready(page);
   await page.evaluate(()=>new Promise((resolve,reject)=>{const open=indexedDB.open('learningos-v2-evidence-1',1);open.onerror=()=>reject(open.error);open.onsuccess=()=>{const db=open.result;const tx=db.transaction('local','readwrite');tx.objectStore('local').put({not:'a JSON string'},'journal');tx.oncomplete=()=>{db.close();resolve();};tx.onabort=()=>reject(tx.error);};}));
   await page.reload();await expect(page.getByRole('alert')).toContainText('Damaged local record journal');await expect(page.locator('#main')).toHaveAttribute('data-ready','false');
+});
+
+test('reading appearance persists offline without changing evidence or the current draft', async ({page,context}) => {
+  await start(page);
+  await page.locator('#reasoning').fill('Keep my reasoning while I compare themes.');
+  await expect.poll(()=>page.evaluate(async()=>JSON.parse(await(await import('/pkg/learningos_web.js')).local_draft_json()).reasoning)).toBe('Keep my reasoning while I compare themes.');
+  const before=await backup(page);
+  for(const [width,height,size] of [[1440,900,'20'],[360,740,'24']]) {
+    await page.setViewportSize({width,height});
+    await page.getByLabel('Text size',{exact:true}).selectOption(size);
+    for(const theme of ['dark','contrast','paper']) {
+      await page.getByLabel('Color scheme',{exact:true}).selectOption(theme);
+      await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
+      await expect(page.locator('#reasoning')).toHaveValue('Keep my reasoning while I compare themes.');
+      expect(await backup(page)).toEqual(before);
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+      expect(result.violations).toEqual([]);
+      await page.evaluate(()=>window.scrollTo(0,0));
+      await page.screenshot({path:test.info().outputPath(`appearance-${theme}-${width}.png`),fullPage:true});
+    }
+  }
+  await page.getByLabel('Text size',{exact:true}).selectOption('22');
+  await page.getByLabel('Color scheme',{exact:true}).selectOption('dark');
+  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
+  await page.reload();await ready(page);
+  await context.setOffline(true);await page.reload();await ready(page);await phase(page,'Predict');
+  await expect(page.getByLabel('Color scheme',{exact:true})).toHaveValue('dark');
+  await expect(page.getByLabel('Text size',{exact:true})).toHaveValue('22');
+  await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
+  await expect(page.locator('html')).toHaveAttribute('data-text-size','22');
+  await expect(page.locator('#reasoning')).toHaveValue('Keep my reasoning while I compare themes.');
+  expect(await backup(page)).toEqual(before);
 });

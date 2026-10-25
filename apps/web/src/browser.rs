@@ -4,6 +4,42 @@ use store::BrowserJournal;
 use wasm_bindgen::{JsCast, prelude::*};
 use wasm_bindgen_futures::JsFuture;
 use web_sys::{HtmlElement, KeyboardEvent};
+
+pub fn appearance() -> (String, String) {
+    let stored = web_sys::window()
+        .and_then(|window| window.local_storage().ok().flatten())
+        .and_then(|storage| storage.get_item("learningos-appearance-v1").ok().flatten());
+    match stored.as_deref().and_then(|value| value.split_once(':')) {
+        Some((theme, size))
+            if matches!(theme, "paper" | "dark" | "contrast")
+                && matches!(size, "18" | "20" | "22" | "24") =>
+        {
+            (theme.into(), size.into())
+        }
+        _ => ("paper".into(), "20".into()),
+    }
+}
+
+pub fn apply_appearance(theme: &str, size: &str) {
+    if !matches!(theme, "paper" | "dark" | "contrast") || !matches!(size, "18" | "20" | "22" | "24")
+    {
+        return;
+    }
+    let Some(window) = web_sys::window() else {
+        return;
+    };
+    if let Some(root) = window
+        .document()
+        .and_then(|document| document.document_element())
+    {
+        let _ = root.set_attribute("data-theme", theme);
+        let _ = root.set_attribute("data-text-size", size);
+    }
+    if let Ok(Some(storage)) = window.local_storage() {
+        let _ = storage.set_item("learningos-appearance-v1", &format!("{theme}:{size}"));
+    }
+}
+
 fn failure(ui: RwSignal<Ui>, e: impl ToString) {
     ui.update(|u| {
         u.error = e.to_string();

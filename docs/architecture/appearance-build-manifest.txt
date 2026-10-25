@@ -1,0 +1,8 @@
+variant=coherent
+base_revision=d88ea88747a22dd6eca5ebc1b0cbcbbbb7072075
+cache_version=a00c0c32760eaed9dc0f
+f4bc2dcd3b57fce53c1f95325a57049e8f76d31fa590dc39a256c71de91b1f12  Cargo.lock
+321b2a3c78b96373010d8658657724dd2145f66131974afbd00a04647f2d4dff  /tmp/learningos-appearance-final/assets/pkg/learningos_web_bg.wasm
+ccaa0b72a8e6e4cfdd3f6c5cf96d225b8ccafb20d91313cec8c5122ae6f37cce  /tmp/learningos-appearance-final/assets/pkg/learningos_web.js
+7a044c0429cbc51182a71a4fa55aca9ae908b9f2427b35eec209061e06a3ff49  /tmp/learningos-appearance-final/assets/app.css
+51a70a4adc22374a43899c2ad8eb38afa6a8ba2c47d4328167a274fa270370db  /tmp/learningos-appearance-final/learningos-server

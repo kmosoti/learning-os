@@ -163,13 +163,56 @@ independent experiment reports for actual measurements and unresolved evidence.
 The next bounded content milestone remains one reviewed local Markdown source,
 immutable spans/assertions and a second offline lesson.
 
-## Progress checkpoint — 2026-10-25
+## Reading appearance
+
+The **Color scheme** and **Text size** controls below the page heading apply
+immediately across the workspace, forms, dialogs and graph. Compare Warm Paper,
+Soft Dark and High Contrast using the same lesson. Text sizes are 18, 20, 22 and
+24 px; the initial setting is Warm Paper at 20 px. These are adjustable reading
+preferences, not a claim of benefit for a specific eye condition.
+
+Rust owns the controls and applies semantic CSS tokens. When browser storage is
+permitted, `learningos-appearance-v1` in localStorage remembers the validated
+theme/size pair on reload, including offline reload. Invalid values fall back to
+the initial setting. Appearance is separate from journal events, drafts and
+evidence exports; changing it does not submit or clear an answer.
+
+### Appearance update verification (2026-10-25)
+
+The coherent appearance build passed all 12 Chromium cases, including four
+viewports with actual 200% root text enlargement (40 px from the new 20 px
+baseline). All three palettes passed axe and root-overflow checks on the
+prediction screen at 1440×900/20 px and 360×740/24 px. The new integration case
+also proves that theme changes preserve the draft and exact evidence backup,
+and that preferences survive offline reload. That focused case passed in Firefox
+before the final CSS-only card-header wrapping correction; a complete final
+Firefox campaign remains open. SSR/hydrate Clippy with warnings denied, rustfmt,
+and the coherent release build passed.
+
+The first enlarged-code check exposed an inaccessible horizontal scroll region;
+code examples now have a named keyboard-focusable region. A corrected 200% test
+then exposed the question-version label overflowing its header on narrow screens;
+wrapping that header fixed it. The initial reflow failure report is retained.
+The Composite UI Toolkit's initial appearance build passed all six normal/spacing
+cases via the exact-style-hash loopback proxy. Incomplete automated contrast checks
+remain manual review; no full accessibility or eye-condition benefit is claimed.
+
+- [Chromium results](appearance-chromium-results.json)
+- [Focused Firefox results](appearance-firefox-results.json)
+- [Initial reflow failures](appearance-reflow-initial.json)
+- [Composite UI Toolkit report](appearance-toolkit-report.json)
+- [Final build hashes](appearance-build-manifest.txt)
+- [Warm Paper](../ui-reference/appearance-2026-10-25/appearance-paper-1440.png),
+  [Soft Dark](../ui-reference/appearance-2026-10-25/appearance-dark-1440.png),
+  [High Contrast](../ui-reference/appearance-2026-10-25/appearance-contrast-1440.png)
+
+## First progress checkpoint — d88ea88 (2026-10-25)
 
 This is a reviewable implementation checkpoint, not completion of issue #52 or a
 release claim. The owner requested a stopping point, progress commit and push.
 The feature remains a draft while the following gates remain outstanding.
 
-Verified on the current coherent checkpoint:
+Verified on the coherent d88ea88 checkpoint:
 
 - `cargo fmt --all --check`: passed.
 - `cargo clippy --locked --workspace --all-targets -- -D warnings`: passed.
