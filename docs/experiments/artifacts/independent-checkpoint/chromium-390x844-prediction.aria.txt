@@ -1,0 +1,32 @@
+- link "Skip to learning workspace":
+  - /url: "#main"
+- main:
+  - button "Open navigation": ☰
+  - text: GUIDED SESSION / RUST
+  - heading "Ownership & borrowing" [level=1]
+  - button "Sources"
+  - button "Plan ↗"
+  - region "Learning transcript":
+    - text: A SMALL QUESTION, A DEEPER MODEL
+    - heading "Who owns the value?" [level=2]
+    - paragraph: Make your current understanding visible. Predictions, source material and check results each tell us something different.
+    - text: SOURCE · THE RUST PROGRAMMING LANGUAGE PREDICTION / BEFORE THE EXPLANATION move · v1
+    - heading "Will this program compile?" [level=3]
+    - paragraph: Commit to a prediction, or choose “I don’t know yet”. It is not a mastery judgment.
+    - code: "fn main() { let name = String::from(\"Ada\"); let next = name; println!(\"{name} {next}\"); }"
+    - group "Your answer":
+      - text: Your answer
+      - radio "It compiles"
+      - text: It compiles
+      - radio "It does not compile"
+      - text: It does not compile
+      - radio "I don't know yet"
+      - text: I don't know yet
+    - text: Your reasoningOptional · retained, not semantically graded
+    - textbox "Your reasoningOptional · retained, not semantically graded":
+      - /placeholder: Trace what happens to the value…
+    - text: Confidence Optional
+    - spinbutton "Confidence Optional %"
+    - text: "% Saved as a distinct observation"
+    - button "Save prediction →" [disabled]
+  - status: Saved locally · revision 2

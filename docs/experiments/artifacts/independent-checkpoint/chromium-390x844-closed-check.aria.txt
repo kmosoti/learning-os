@@ -1,0 +1,17 @@
+- link "Skip to learning workspace":
+  - /url: "#main"
+- main:
+  - button "Open navigation": ☰
+  - text: GUIDED SESSION / RUST
+  - heading "Ownership & borrowing" [level=1]
+  - button "Sources"
+  - button "Plan ↗"
+  - region "Learning transcript":
+    - text: A SMALL QUESTION, A DEEPER MODEL
+    - heading "Who owns the value?" [level=2]
+    - paragraph: Make your current understanding visible. Predictions, source material and check results each tell us something different.
+    - text: SOURCE · THE RUST PROGRAMMING LANGUAGE COMPREHENSION CHECK
+    - heading "Can you apply the idea yourself?" [level=3]
+    - paragraph: Take a moment to recall it before opening the question.
+    - button "Open check →"
+  - status: Saved locally · revision 5

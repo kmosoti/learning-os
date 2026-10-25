@@ -1,0 +1,33 @@
+- link "Skip to learning workspace":
+  - /url: "#main"
+- navigation "Main navigation":
+  - text: ◈ LearningOS LOCAL / 02 WORKSPACE
+  - button "⌘ Knowledge graph"
+  - text: YOUR SESSIONS 01
+  - button "Ownership & borrowing Rust · guided exploration"
+  - text: Personal workspace Evidence stays in this browser
+  - button "Activity & local data": ↗ Activity & local data
+  - text: LEARNING, MADE INSPECTABLE
+- main:
+  - text: GUIDED SESSION / RUST
+  - heading "Ownership & borrowing" [level=1]
+  - button "Sources"
+  - button "Plan ↗"
+  - text: LOCAL
+  - region "Learning transcript":
+    - text: A SMALL QUESTION, A DEEPER MODEL
+    - heading "Who owns the value?" [level=2]
+    - paragraph: Make your current understanding visible. Predictions, source material and check results each tell us something different.
+    - text: SOURCE · THE RUST PROGRAMMING LANGUAGE COMPREHENSION CHECK
+    - heading "Can you apply the idea yourself?" [level=3]
+    - paragraph: Take a moment to recall it before opening the question.
+    - button "Open check →"
+  - complementary "Session plan":
+    - text: THE PLAN
+    - list:
+      - listitem: 01 Ownership & moves
+      - listitem: 02 Shared borrowing
+      - listitem: 03 Borrow overlap
+    - paragraph: Source assertions describe the material. Your observations describe what happened in this session.
+    - button "Inspect local evidence ↗"
+  - status: Saved locally · revision 5

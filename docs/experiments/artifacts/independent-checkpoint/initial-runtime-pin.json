@@ -1,0 +1,91 @@
+{
+  "server_pid": 1608,
+  "running_executable_sha256": "5ad6304dc64cd4c16c5d0f3d951fc115fa28125577680e6098e3a8c5ff709195",
+  "assets": {
+    "app.css": {
+      "bytes": 17645,
+      "sha256": "61fc6d9a03797d3127035ef373fcbbd29e5d562483f62fc8c2bba84d93c95d8d"
+    },
+    "bootstrap.js": {
+      "bytes": 361,
+      "sha256": "67bdb63f9eae31e6b48428d34d7426f33d578c1a87ddc34d48528f0fcac1f875"
+    },
+    "fonts/CMU-OFL.txt": {
+      "bytes": 4820,
+      "sha256": "73273dffdefe2e5f1e138084d4a4b65b1c50df2ab0179f78484f31beefe30d84"
+    },
+    "fonts/README.txt": {
+      "bytes": 739,
+      "sha256": "bc310202887096ecda9ccd37d1a988076474e4e57900757baec5eb4fe725e156"
+    },
+    "fonts/cmunbx.ttf": {
+      "bytes": 221904,
+      "sha256": "643afcc8fc9a526cd060f37459f050f03156f0a593779d87b8ad21f937757a31"
+    },
+    "fonts/jetbrains-mono-LICENSE": {
+      "bytes": 4524,
+      "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+    },
+    "fonts/jetbrains-mono-latin-400-normal.woff2": {
+      "bytes": 21168,
+      "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+    },
+    "fonts/jetbrains-mono-upstream-manifest.json": {
+      "bytes": 1606,
+      "sha256": "e3e342deafe728121306398cc3f1d7648452adee9094367f159e9b83091319a3"
+    },
+    "fonts/source-sans-3-LICENSE": {
+      "bytes": 4314,
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    },
+    "fonts/source-sans-3-latin-400-normal.woff2": {
+      "bytes": 15696,
+      "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b"
+    },
+    "fonts/source-sans-3-latin-600-normal.woff2": {
+      "bytes": 15668,
+      "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38"
+    },
+    "fonts/source-sans-3-upstream-manifest.json": {
+      "bytes": 1595,
+      "sha256": "a51cdf7d681b18513c2661e120bf2e44ba7444223f4c07361b3156c55015dc6d"
+    },
+    "icon-192.png": {
+      "bytes": 1278,
+      "sha256": "95d1d7cddc02360dcfb0984a216550f4d9532814e2b8a9ed538153caec7e94f8"
+    },
+    "icon-512.png": {
+      "bytes": 7812,
+      "sha256": "d136f4c1e9985ff1003649294b7ffd3b99005db5ae70f7463d58de75de212f32"
+    },
+    "icon.svg": {
+      "bytes": 263,
+      "sha256": "23cb7130c286f33f3cc4fad8012576121532fb6d62159a3edf8c99cfecf9e4a9"
+    },
+    "manifest.webmanifest": {
+      "bytes": 484,
+      "sha256": "d881d9a16304dc780baba0ab194e0dfd9c5059cc87c12fa688127f25cbc099d0"
+    },
+    "pkg/learningos_web.d.ts": {
+      "bytes": 6296,
+      "sha256": "657330a1de0db61cee724eb4f17fe8f8280e843a8310a25697f07f419d5a16d2"
+    },
+    "pkg/learningos_web.js": {
+      "bytes": 55043,
+      "sha256": "ef304ee4d3920ba5b0a00a9262989be94561b43c0d226822d1f88c8ddfced6cc"
+    },
+    "pkg/learningos_web_bg.wasm": {
+      "bytes": 4335628,
+      "sha256": "1f475fecc2045a259939c2fba85b8f25b3764e66c5febea5bc7ae893d3f54a25"
+    },
+    "pkg/learningos_web_bg.wasm.d.ts": {
+      "bytes": 3435,
+      "sha256": "75a4577ace4677716b153eeeafcd961dc9707f979781bdd74094d28885d006db"
+    },
+    "sw.js": {
+      "bytes": 1228,
+      "sha256": "fc5d1b5f8eeb15311e184668f5a7289c4f1e088aa153ae15fa7802d5743daf3b"
+    }
+  },
+  "source_attribution": "Initial pre-review build; exact source snapshot was not retained. These binary/asset hashes identify measured bytes, not a clean commit."
+}

@@ -1,0 +1,40 @@
+- link "Skip to learning workspace":
+  - /url: "#main"
+- navigation "Main navigation":
+  - text: ◈ LearningOS LOCAL / 02 WORKSPACE
+  - button "⌘ Knowledge graph"
+  - text: YOUR SESSIONS 01
+  - button "Ownership & borrowing Rust · guided exploration"
+  - text: Personal workspace Evidence stays in this browser
+  - button "Activity & local data": ↗ Activity & local data
+  - text: LEARNING, MADE INSPECTABLE
+- main:
+  - text: GUIDED SESSION / RUST
+  - heading "Ownership & borrowing" [level=1]
+  - button "Sources"
+  - button "Plan ↗"
+  - text: LOCAL
+  - region "Learning transcript":
+    - text: A SMALL QUESTION, A DEEPER MODEL
+    - heading "Who owns the value?" [level=2]
+    - paragraph: Make your current understanding visible. Predictions, source material and check results each tell us something different.
+    - text: SOURCE · THE RUST PROGRAMMING LANGUAGE
+    - article:
+      - text: LEARNINGOS / SOURCE-GROUNDED EXPLANATION
+      - heading "Follow the owner, then the borrow" [level=3]
+      - paragraph: "Assigning this String to next moves its ownership. The later use of name is rejected with E0382. This example does not imply that every assignment moves: Copy types behave differently."
+      - code: "fn main() { let name = String::from(\"Ada\"); let next = name; println!(\"{name} {next}\"); }"
+      - button "Read the pinned source span ↗"
+      - text: Thinking while readingOptional · saved separately from answer reasoning
+      - textbox "Thinking while readingOptional · saved separately from answer reasoning":
+        - /placeholder: What clicked? What remains unclear?
+      - button "I’m ready to check →"
+  - complementary "Session plan":
+    - text: THE PLAN
+    - list:
+      - listitem: 01 Ownership & moves
+      - listitem: 02 Shared borrowing
+      - listitem: 03 Borrow overlap
+    - paragraph: Source assertions describe the material. Your observations describe what happened in this session.
+    - button "Inspect local evidence ↗"
+  - status: Saved locally · revision 4
