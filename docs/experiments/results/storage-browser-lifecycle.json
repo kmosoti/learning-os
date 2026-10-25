@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-25T21:42:18.665Z",
+  "conditions": "Persistent profiles on repository btrfs filesystem; process kill is SIGKILL to owned Chrome process group; not a power-cut test.",
+  "tests": [
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "two-tab concurrent CAS",
+      "outcomes": [
+        {
+          "revision": 2
+        },
+        {
+          "error": "stale revision; draft preserved"
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "migration/blocked/future version",
+      "abortedMigrationPreservedEvents": 2,
+      "blockedUpgradeObserved": true,
+      "futureVersionRejected": true
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "quota failure",
+      "quotaOverride": {
+        "usage": 0,
+        "quota": 1024,
+        "overrideActive": true,
+        "usageBreakdown": [
+          {
+            "storageType": "file_systems",
+            "usage": 0
+          },
+          {
+            "storageType": "indexeddb",
+            "usage": 0
+          },
+          {
+            "storageType": "cache_storage",
+            "usage": 0
+          },
+          {
+            "storageType": "service_workers",
+            "usage": 0
+          }
+        ]
+      },
+      "acknowledged": false,
+      "error": "QuotaExceededError",
+      "revision": 0,
+      "events": 0
+    },
+    {
+      "browser": "firefox",
+      "engine": "idb",
+      "gate": "two-tab concurrent CAS",
+      "outcomes": [
+        {
+          "revision": 2
+        },
+        {
+          "error": "stale revision; draft preserved"
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "engine": "idb",
+      "gate": "migration/blocked/future version",
+      "abortedMigrationPreservedEvents": 2,
+      "blockedUpgradeObserved": true,
+      "futureVersionRejected": true
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 0,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 1,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 2,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    },
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 0,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    },
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 1,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    },
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "SIGKILL-after-ACK",
+      "schedule": 2,
+      "events": 2,
+      "revision": 2,
+      "duplicateRetry": 2
+    }
+  ],
+  "failures": [
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "two-tab concurrent CAS",
+      "error": "Error: page.evaluate: NoModificationAllowedError: Failed to execute 'createSyncAccessHandle' on 'FileSystemFileHandle': Access Handles cannot be created if there is another open Access Handle or Writable stream associated with the same file."
+    },
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "worker death bounded failure",
+      "workers": 1,
+      "acknowledged": false,
+      "timeout": true
+    },
+    {
+      "browser": "firefox",
+      "engine": "turso",
+      "gate": "two-tab concurrent CAS",
+      "error": "Error: page.evaluate: No modification allowed"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-25T21:35:36.101Z",
+  "conditions": "Persistent profiles on repository btrfs filesystem; process kill is SIGKILL to owned Chrome process group; not a power-cut test.",
+  "tests": [
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "two-tab concurrent CAS",
+      "outcomes": [
+        {
+          "error": "stale revision; draft preserved"
+        },
+        {
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "gate": "migration/blocked/future version",
+      "abortedMigrationPreservedEvents": 2,
+      "blockedUpgradeObserved": true,
+      "futureVersionRejected": true
+    }
+  ],
+  "failures": [
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "gate": "two-tab concurrent CAS",
+      "error": "Error: page.evaluate: NoModificationAllowedError: Failed to execute 'createSyncAccessHandle' on 'FileSystemFileHandle': Access Handles cannot be created if there is another open Access Handle or Writable stream associated with the same file."
+    },
+    {
+      "gate": "harness",
+      "error": "Error: quota must reject, without ACK"
+    }
+  ]
+}

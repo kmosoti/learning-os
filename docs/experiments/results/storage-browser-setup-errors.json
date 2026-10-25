@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25T21:18:32.647Z",
+  "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "os": "7.2.9-201.fc44.x86_64",
+  "memory": 33491922944,
+  "runs": [],
+  "failures": [
+    {
+      "browser": "chromium",
+      "engine": "idb",
+      "error": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:4174/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/\", waiting until \"load\"\u001b[22m\n",
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "engine": "turso",
+      "error": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:4174/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/\", waiting until \"load\"\u001b[22m\n",
+      "pageErrors": []
+    }
+  ]
+}

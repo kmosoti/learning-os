@@ -1,0 +1,73 @@
+{
+  "reference_turso_commit": "607bff9fd0e547a25a97b3bf06e83bcc5d99d53c",
+  "artifacts": [
+    {
+      "path": "experiments/storage/Cargo.lock",
+      "sha256": "d53b3f240d06b8f3404de3f3380e7973c6ff2b79daefeba8b559d95d028e3141",
+      "bytes": 66888
+    },
+    {
+      "path": "experiments/storage/browser-rust/Cargo.lock",
+      "sha256": "338089fd14ce01baabb19748caa070f26936fca8a9ba3479e8208320d71bf7a0",
+      "bytes": 6695
+    },
+    {
+      "path": "experiments/storage/browser/package-lock.json",
+      "sha256": "b52fda480770f37ea90b21fe12c9db06da065eb5aa0dd45d3ec4dd2ab267be5c",
+      "bytes": 5750
+    },
+    {
+      "path": "experiments/storage/target/release/learningos-storage-experiment",
+      "sha256": "8ca4e4ce9bd67422c4b306b8f0d9fa3c55aceb448a82194a986111b4575d0706",
+      "bytes": 25151448
+    },
+    {
+      "path": "experiments/storage/browser/pkg/learningos_browser_journal_experiment_bg.wasm",
+      "sha256": "6106ec81ff6e9337f1604c56a6a465340f53c13ba379a67d6e16b8e9875e1266",
+      "bytes": 244909
+    }
+  ],
+  "final_lifecycle_wasm": {
+    "path": "experiments/storage/browser/pkg/learningos_browser_journal_experiment_bg.wasm",
+    "sha256": "e823a4fc8d2bd448698f59b0d47a837e846a4edc3f78da3a667a23b69d3d4a5c",
+    "note": "Success path unchanged; request-result error now rejects and lint-only nested condition collapsed after timing run."
+  },
+  "source_files": [
+    {
+      "path": "experiments/storage/src/main.rs",
+      "sha256": "629a49225916d996be4f9332522ff00b2a15581a870eeb0c9c8600da3d4407d4"
+    },
+    {
+      "path": "experiments/storage/browser-rust/src/lib.rs",
+      "sha256": "4211cfd8cd807a5aef151a36248a8df0b2b65e221106e1d638e3cd9a52c5673a"
+    },
+    {
+      "path": "experiments/storage/browser/package.json",
+      "sha256": "977d938dc00d93a7697bb2b3094638267cd7fdaad7be687a53ac3f3d1978f30b"
+    },
+    {
+      "path": "experiments/storage/browser/package-lock.json",
+      "sha256": "b52fda480770f37ea90b21fe12c9db06da065eb5aa0dd45d3ec4dd2ab267be5c"
+    },
+    {
+      "path": "experiments/storage/browser/index.html",
+      "sha256": "6cabfd9a7ea30d1d5d53919cf05c0def924bfba5ac4b32572d4a2027bd91e118"
+    },
+    {
+      "path": "experiments/storage/browser/harness.js",
+      "sha256": "c3ae3095492602c86c521f513b9d76cc8bfa5d5bf6f76408f0a3fda4c5857004"
+    },
+    {
+      "path": "experiments/storage/browser/run.mjs",
+      "sha256": "dc2adc4b2f69fa49f886548cd1656dfe0d98cdcc1403e20053976cbdbfbfea7d"
+    },
+    {
+      "path": "experiments/storage/browser/lifecycle.mjs",
+      "sha256": "915a4473a3802f363d187024ec8b0ace45f6d0f94e60520c09f90fec8db26952"
+    },
+    {
+      "path": "experiments/storage/browser/memory.mjs",
+      "sha256": "9672f260c57d5a4861706efe19626987a47804d86ad12be29727a4f65ce4f7b6"
+    }
+  ]
+}

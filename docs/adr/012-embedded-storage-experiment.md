@@ -15,3 +15,14 @@ Run the shared conformance and benchmark protocol in [first slice](../experiment
 
 ## Migration and failure
 Use a separate v2 DB. No legacy in-place migration, engine autodetection switch or silent fallback after corruption. Require verified export/replay before an explicit backend migration. Quota/transaction failures retain drafts and never show success. Unsupported versions fail closed with export/recovery instructions. User deletion/OS/browser eviction cannot be prevented by an application durability claim.
+
+## Measured mechanism selection (2026-10-25)
+
+The independent [storage experiment](../experiments/storage-selection.md) selects
+bundled SQLite/rusqlite 0.41.0 for native persistence and Rust IndexedDB with strict
+transactions for browser evidence. Native Turso passed the exercised correctness
+gates but did not establish an overall advantage. Browser Turso 0.8.3 fails the
+required concurrent-tab opening and bounded worker-failure recovery gates despite
+promising stress throughput. This is the authorized experiment outcome, not formal
+owner acceptance of this ADR or approval to merge. The final app adapter must pass
+its own integration tests and timing checks.
