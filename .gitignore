@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# LearningOS v2 generated artifacts and private local stores
+node_modules/
+playwright-report/
+test-results/
+*.db
+*.db-wal
+*.db-shm
+.local/
+experiments/storage/browser/pkg/

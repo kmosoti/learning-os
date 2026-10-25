@@ -1,0 +1,832 @@
+{
+  "at": "2026-10-25T21:27:01Z",
+  "platform": "Linux-7.2.9-201.fc44.x86_64-x86_64-with-glibc2.43",
+  "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "filesystem": "TARGET FSTYPE SOURCE                                                       OPTIONS\n/home  btrfs  /dev/mapper/luks-ac115b34-e7cb-4c76-ae1f-520630e4856a[/home] rw,relatime,seclabel,compress=zstd:1,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/home\n",
+  "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "lock_sha256": "d53b3f240d06b8f3404de3f3380e7973c6ff2b79daefeba8b559d95d028e3141",
+  "conditions": "WAL/FULL, no MVCC, fresh DB each run, batch=10, engine order alternated; full append port incl prepare/receipt; warm OS cache, no dropped caches",
+  "runs": [
+    {
+      "engine": "sqlite",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.54.1"
+        ]
+      ],
+      "repetition": 0,
+      "peak_rss_kib": 7464
+    },
+    {
+      "append_p50_ms": 3.2269159999999997,
+      "append_p95_ms": 3.668334,
+      "append_total_ms": 3414.000298,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 3.651027,
+      "samples": 1000,
+      "repetition": 0,
+      "peak_rss_kib": 12732
+    },
+    {
+      "append_p50_ms": 3.344049,
+      "append_p95_ms": 7.398355,
+      "append_total_ms": 44782.175374,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 31.844451000000003,
+      "samples": 10000,
+      "repetition": 0,
+      "peak_rss_kib": 47384
+    },
+    {
+      "engine": "turso",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.50.4"
+        ]
+      ],
+      "repetition": 0,
+      "peak_rss_kib": 21920
+    },
+    {
+      "append_p50_ms": 7.264432,
+      "append_p95_ms": 11.421581,
+      "append_total_ms": 7677.6158590000005,
+      "batch": 10,
+      "engine": "turso",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 6.209662000000001,
+      "samples": 1000,
+      "repetition": 0,
+      "peak_rss_kib": 27000
+    },
+    {
+      "append_p50_ms": 7.458153,
+      "append_p95_ms": 11.216773,
+      "append_total_ms": 79092.763608,
+      "batch": 10,
+      "engine": "turso",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 57.836796,
+      "samples": 10000,
+      "repetition": 0,
+      "peak_rss_kib": 70436
+    },
+    {
+      "engine": "turso",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.50.4"
+        ]
+      ],
+      "repetition": 1,
+      "peak_rss_kib": 19952
+    },
+    {
+      "append_p50_ms": 7.3295,
+      "append_p95_ms": 8.578608,
+      "append_total_ms": 7688.628092,
+      "batch": 10,
+      "engine": "turso",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 5.203101,
+      "samples": 1000,
+      "repetition": 1,
+      "peak_rss_kib": 26784
+    },
+    {
+      "append_p50_ms": 7.45752,
+      "append_p95_ms": 11.53221,
+      "append_total_ms": 78987.285496,
+      "batch": 10,
+      "engine": "turso",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 57.474933,
+      "samples": 10000,
+      "repetition": 1,
+      "peak_rss_kib": 70260
+    },
+    {
+      "engine": "sqlite",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.54.1"
+        ]
+      ],
+      "repetition": 1,
+      "peak_rss_kib": 7436
+    },
+    {
+      "append_p50_ms": 7.141568,
+      "append_p95_ms": 12.603654,
+      "append_total_ms": 7632.397465,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 3.12094,
+      "samples": 1000,
+      "repetition": 1,
+      "peak_rss_kib": 12260
+    },
+    {
+      "append_p50_ms": 7.160121999999999,
+      "append_p95_ms": 10.768272000000001,
+      "append_total_ms": 76001.20541600001,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 30.698759,
+      "samples": 10000,
+      "repetition": 1,
+      "peak_rss_kib": 47244
+    },
+    {
+      "engine": "sqlite",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.54.1"
+        ]
+      ],
+      "repetition": 2,
+      "peak_rss_kib": 7320
+    },
+    {
+      "append_p50_ms": 7.107093,
+      "append_p95_ms": 10.277292000000001,
+      "append_total_ms": 7503.430624,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 3.221019,
+      "samples": 1000,
+      "repetition": 2,
+      "peak_rss_kib": 12732
+    },
+    {
+      "append_p50_ms": 7.126689000000001,
+      "append_p95_ms": 10.713291,
+      "append_total_ms": 75519.44258599999,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 34.291969,
+      "samples": 10000,
+      "repetition": 2,
+      "peak_rss_kib": 47508
+    },
+    {
+      "engine": "turso",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.50.4"
+        ]
+      ],
+      "repetition": 2,
+      "peak_rss_kib": 19992
+    },
+    {
+      "append_p50_ms": 7.5125399999999996,
+      "append_p95_ms": 9.842736,
+      "append_total_ms": 7821.800773999999,
+      "batch": 10,
+      "engine": "turso",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 5.021131,
+      "samples": 1000,
+      "repetition": 2,
+      "peak_rss_kib": 30520
+    },
+    {
+      "append_p50_ms": 7.50182,
+      "append_p95_ms": 12.003336,
+      "append_total_ms": 79289.67235099999,
+      "batch": 10,
+      "engine": "turso",
+      "events": 100000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "replay_ms": 51.459882,
+      "samples": 10000,
+      "repetition": 2,
+      "peak_rss_kib": 66752
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-ack",
+      "repetition": 0,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 16.8837180826813
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-ack",
+      "repetition": 1,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 20.590011030435562
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-ack",
+      "repetition": 2,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 16.5635779267177
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-ack",
+      "repetition": 3,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 15.220243949443102
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-ack",
+      "repetition": 4,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 17.1168859815225
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 0,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 17.239816952496767
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 1,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 16.891399980522692
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 2,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 16.66108309291303
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 3,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 16.685359994880855
+    },
+    {
+      "engine": "sqlite",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 4,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 16.838836017996073
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-ack",
+      "repetition": 0,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 3.146960982121527
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-ack",
+      "repetition": 1,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 5.546846077777445
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-ack",
+      "repetition": 2,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 3.228415036574006
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-ack",
+      "repetition": 3,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 4.665344953536987
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-ack",
+      "repetition": 4,
+      "boundary": "ACK",
+      "result": {
+        "events": [
+          [
+            "2"
+          ]
+        ],
+        "receipts": [
+          [
+            "1"
+          ]
+        ],
+        "revision": [
+          [
+            "2"
+          ]
+        ]
+      },
+      "restart_ms": 3.0715150060132146
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 0,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 2.8784209862351418
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 1,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 2.731035929173231
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 2,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 3.0560189625248313
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 3,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 3.6378420190885663
+    },
+    {
+      "engine": "turso",
+      "test": "SIGKILL-uncommitted",
+      "repetition": 4,
+      "boundary": "UNCOMMITTED",
+      "result": {
+        "events": [
+          [
+            "0"
+          ]
+        ],
+        "receipts": [
+          [
+            "0"
+          ]
+        ],
+        "revision": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "restart_ms": 3.21387208532542
+    }
+  ],
+  "failures": [],
+  "raw_samples": {
+    "file": "storage-native.samples.json.gz",
+    "uncompressed_sha256": "b67c109efb6c36d3ad0329a3ee4491c72d2c418d71ec57e2d7b303ce59034ed2"
+  }
+}

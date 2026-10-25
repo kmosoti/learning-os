@@ -1,0 +1,50 @@
+[
+  {
+    "engine": "sqlite",
+    "gate": "independent process writer blocked, rollback after SIGKILL",
+    "second_returncode": 1,
+    "second_error": "Error: SqliteFailure(Error { code: DatabaseBusy, extended_code: 5 }, Some(\"database is locked\"))\n",
+    "bounded_error_ms": 5007.874684990384,
+    "reopened": {
+      "events": [
+        [
+          "0"
+        ]
+      ],
+      "receipts": [
+        [
+          "0"
+        ]
+      ],
+      "revision": [
+        [
+          "0"
+        ]
+      ]
+    }
+  },
+  {
+    "engine": "turso",
+    "gate": "independent process writer blocked, rollback after SIGKILL",
+    "second_returncode": 1,
+    "second_error": "Error: Error(\"Locking error: Failed locking file '/home/kmosoti/Documents/Codex/2026-10-25-rearchitect-kmosoti-learning-os-into-learningos/learning-os/.local/contention-yvljmbug/turso.db'. File is locked by another process\")\n",
+    "bounded_error_ms": 2.9696139972656965,
+    "reopened": {
+      "events": [
+        [
+          "0"
+        ]
+      ],
+      "receipts": [
+        [
+          "0"
+        ]
+      ],
+      "revision": [
+        [
+          "0"
+        ]
+      ]
+    }
+  }
+]

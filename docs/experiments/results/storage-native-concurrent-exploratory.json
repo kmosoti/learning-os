@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-25T21:18:59Z",
+  "platform": "Linux-7.2.9-201.fc44.x86_64-x86_64-with-glibc2.43",
+  "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "filesystem": "TARGET FSTYPE SOURCE                                                       OPTIONS\n/home  btrfs  /dev/mapper/luks-ac115b34-e7cb-4c76-ae1f-520630e4856a[/home] rw,relatime,seclabel,compress=zstd:1,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/home\n",
+  "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "lock_sha256": "d53b3f240d06b8f3404de3f3380e7973c6ff2b79daefeba8b559d95d028e3141",
+  "conditions": "WAL/FULL, no MVCC, fresh DB each run, batch=10, engine order alternated; full append port incl prepare/receipt; warm OS cache, no dropped caches",
+  "runs": [
+    {
+      "engine": "sqlite",
+      "journal": [
+        [
+          "wal"
+        ]
+      ],
+      "passed": [
+        "atomic append",
+        "duplicate retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "rollback",
+        "unique/check/FK constraints",
+        "aborted migration",
+        "ordered replay"
+      ],
+      "sync": [
+        [
+          "2"
+        ]
+      ],
+      "version": [
+        [
+          "3.54.1"
+        ]
+      ],
+      "repetition": 0,
+      "peak_rss_kib": 7564
+    },
+    {
+      "append_p50_ms": 3.213523,
+      "append_p95_ms": 3.7947670000000002,
+      "append_total_ms": 3445.198626,
+      "batch": 10,
+      "engine": "sqlite",
+      "events": 10000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "replay_ms": 3.097127,
+      "samples": 1000,
+      "repetition": 0,
+      "peak_rss_kib": 12640
+    }
+  ],
+  "failures": [],
+  "raw_samples": {
+    "file": "storage-native-concurrent-exploratory.samples.json.gz",
+    "uncompressed_sha256": "7a6f8719db2bee065e06ed67d7d22697e9ec986e190a82c0b304a0be07e365ff"
+  }
+}

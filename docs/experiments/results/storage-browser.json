@@ -1,0 +1,125 @@
+{
+  "at": "2026-10-25T21:19:13.594Z",
+  "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "os": "7.2.9-201.fc44.x86_64",
+  "memory": 33491922944,
+  "runs": [
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "idb",
+      "passed": [
+        "atomic append",
+        "retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "abort",
+        "rollback",
+        "reopen and lost ACK"
+      ]
+    },
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "idb",
+      "events": 10000,
+      "batch": 10,
+      "samples": 1000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "open_ms": 11.245000004768372,
+      "append_total_ms": 6164.77999997139,
+      "append_p50_ms": 5.990000009536743,
+      "append_p95_ms": 6.565000057220459,
+      "replay_ms": 67.625
+    },
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "idb",
+      "events": 100000,
+      "batch": 10,
+      "samples": 10000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "open_ms": 11.59500002861023,
+      "append_total_ms": 98613.58000004292,
+      "append_p50_ms": 8.40499997138977,
+      "append_p95_ms": 14.144999980926514,
+      "replay_ms": 730.4599999189377
+    },
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "turso",
+      "passed": [
+        "atomic append",
+        "retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "abort",
+        "rollback",
+        "reopen and lost ACK"
+      ]
+    },
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "turso",
+      "events": 10000,
+      "batch": 10,
+      "samples": 1000,
+      "fixture_sha256": "4bb188bf5e84feccf2a9752d0b6b90eb12c5b3ebdfc578098bd5a043ba6172aa",
+      "open_ms": 59.49000000953674,
+      "append_total_ms": 5425.439999938011,
+      "append_p50_ms": 4.569999933242798,
+      "append_p95_ms": 8.704999923706055,
+      "replay_ms": 81.92500007152557
+    },
+    {
+      "browser": "chromium",
+      "version": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "engine": "turso",
+      "events": 100000,
+      "batch": 10,
+      "samples": 10000,
+      "fixture_sha256": "c0a9e742f9e211a05bad5c7d17bbae6d6e12de7ee789219a77f91e830a37d093",
+      "open_ms": 35.36500000953674,
+      "append_total_ms": 58313.92999994755,
+      "append_p50_ms": 4.560000061988831,
+      "append_p95_ms": 8.784999966621399,
+      "replay_ms": 788.4199999570847
+    },
+    {
+      "browser": "firefox",
+      "version": "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0",
+      "engine": "idb",
+      "passed": [
+        "atomic append",
+        "retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "abort",
+        "rollback",
+        "reopen and lost ACK"
+      ]
+    },
+    {
+      "browser": "firefox",
+      "version": "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0",
+      "engine": "turso",
+      "passed": [
+        "atomic append",
+        "retry before CAS",
+        "payload conflict",
+        "stale revision",
+        "abort",
+        "rollback",
+        "reopen and lost ACK"
+      ]
+    }
+  ],
+  "failures": [],
+  "raw_samples": {
+    "file": "storage-browser.samples.json.gz",
+    "uncompressed_sha256": "933e8ff0adf06a5d3965f6b0c8824b8ed945d09aedfaf50e79b7f2f10e520369"
+  }
+}
