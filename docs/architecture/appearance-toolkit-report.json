@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25T22:57:47.461Z",
+  "engine": {
+    "name": "firefox",
+    "version": "157.0",
+    "node": "v24.19.0",
+    "platform": "linux"
+  },
+  "target": "http://127.0.0.1:4311",
+  "pass": true,
+  "tokens": [],
+  "cases": [
+    {
+      "theme": null,
+      "width": 360,
+      "state": "default",
+      "spacing": false,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "button[aria-label=\"Open navigation\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-360-default-normal.png"
+    },
+    {
+      "theme": null,
+      "width": 360,
+      "state": "default",
+      "spacing": true,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "button[aria-label=\"Open navigation\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-360-default-spacing.png"
+    },
+    {
+      "theme": null,
+      "width": 768,
+      "state": "default",
+      "spacing": false,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "button[aria-label=\"Open navigation\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "button[aria-label=\"Zoom out\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                ".junction"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-768-default-normal.png"
+    },
+    {
+      "theme": null,
+      "width": 768,
+      "state": "default",
+      "spacing": true,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                "button[aria-label=\"Open navigation\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "button[aria-label=\"Zoom out\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                ".junction"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-768-default-spacing.png"
+    },
+    {
+      "theme": null,
+      "width": 1280,
+      "state": "default",
+      "spacing": false,
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                ".brand-mark"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                ".selected > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-1280-default-normal.png"
+    },
+    {
+      "theme": null,
+      "width": 1280,
+      "state": "default",
+      "spacing": true,
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false
+      },
+      "violations": [],
+      "needsReview": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "target": [
+                ".brand-mark"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                ".selected > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "button[aria-label=\"Zoom out\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                ".junction"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"282\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"322\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"]:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "tspan[x=\"757\"][dy=\"1.3em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "screenshot": "page-1280-default-spacing.png"
+    }
+  ],
+  "blockedRequests": [],
+  "pageErrors": [],
+  "limitations": [
+    "Automated checks cannot establish complete WCAG conformance or personal visual comfort.",
+    "Incomplete axe checks require manual review.",
+    "Network requests outside the target origin are blocked unless --allow-network is given.",
+    "Text-spacing cases are layout stress checks, not recommended default typography."
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"learningos-browser-verification","private":true,"type":"module","scripts":{"test":"playwright test"},"devDependencies":{"@playwright/test":"1.56.1","@axe-core/playwright":"4.11.1"}}

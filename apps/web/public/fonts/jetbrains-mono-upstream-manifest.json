@@ -1,0 +1,44 @@
+{
+  "package": "@fontsource/jetbrains-mono",
+  "version": "5.3.0",
+  "tarball": "https://registry.npmjs.org/@fontsource/jetbrains-mono/-/jetbrains-mono-5.3.0.tgz",
+  "sha256": "1bbea47d1387406da5b6ccc4184cc61eae6851cc0db5c1d9bbd088ea9daa0b4a",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+    },
+    {
+      "path": "jetbrains-mono-latin-400-normal.woff2",
+      "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+    },
+    {
+      "path": "jetbrains-mono-latin-500-normal.woff2",
+      "sha256": "cb182feeed4d798ff6961d3c79f7026279448fca0676438aaecb21f3fc39553a"
+    },
+    {
+      "path": "jetbrains-mono-latin-600-normal.woff2",
+      "sha256": "400c6bfda18d5d14acad1c15d6dcb9f8e13c015e7286317e0b9a482539bef147"
+    },
+    {
+      "path": "jetbrains-mono-latin-700-normal.woff2",
+      "sha256": "d0d4e818808f2a0ba39b2b09d1989366f63494e295f003c7ef436697378507e8"
+    },
+    {
+      "path": "jetbrains-mono-latin-ext-400-normal.woff2",
+      "sha256": "505dfba8ecbe77e82765f36d317ed7ef4ac42719dc5f4ae68d1c483fd22d0d14"
+    },
+    {
+      "path": "jetbrains-mono-latin-ext-500-normal.woff2",
+      "sha256": "879df9319f1cbf633bee1dd489e376a9e1e8c458f4abddcfe381cb83b5e6b027"
+    },
+    {
+      "path": "jetbrains-mono-latin-ext-600-normal.woff2",
+      "sha256": "90899aac1c15552c028fd205376bb537a2a5205164fe8626efabad77d7260c20"
+    },
+    {
+      "path": "jetbrains-mono-latin-ext-700-normal.woff2",
+      "sha256": "45a606d88f72bc0afae4d1a6988e3dba3a5e77ee51aa3b550e37c31c728f4d2d"
+    }
+  ]
+}

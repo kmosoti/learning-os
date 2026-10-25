@@ -226,3 +226,15 @@ test-results/
 *.db-shm
 .local/
 experiments/storage/browser/pkg/
+
+# LearningOS v2 generated assets and personal/native databases
+/apps/web/public/pkg/
+/learningos-v2-*.sqlite3*
+/artifacts/v2/
+/tests/browser/node_modules/
+/tests/browser/test-results/
+
+/apps/web/public/sw.js
+
+/apps/web/public/**/*.gz
+/apps/web/public/*.gz

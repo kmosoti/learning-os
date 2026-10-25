@@ -1,0 +1,20 @@
+[package]
+name = "learningos-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+[dependencies]
+learningos-web = { workspace = true, features = ["ssr"] }
+learningos-protocol.workspace = true
+learningos-domain.workspace = true
+learningos-application.workspace = true
+leptos = { workspace = true, features = ["ssr"] }
+axum = "=0.8.9"
+tokio = { version = "1", features = ["macros","rt-multi-thread","net","signal"] }
+tower-http = { version = "0.6", features = ["fs","set-header"] }
+rusqlite = { version = "=0.41.0", features = ["bundled"] }
+serde_json.workspace = true
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"

@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/rust-lang/book",
+  "revision": "1500248d8f230566e4ec9f27fcbb8fe9e2898ab1",
+  "documents": [
+    {
+      "path": "ch04-01-what-is-ownership.md",
+      "sha256": "873724c6862ad0cc447becf0e818eb39a324c5d4bfa26ef721286aae1941c0ba",
+      "url": "https://github.com/rust-lang/book/blob/1500248d8f230566e4ec9f27fcbb8fe9e2898ab1/src/ch04-01-what-is-ownership.md"
+    },
+    {
+      "path": "ch04-02-references-and-borrowing.md",
+      "sha256": "7d983eec6235630df6e85c7a5b4cfbdfc7c380c780f60774df65ba2fa1d05ca4",
+      "url": "https://github.com/rust-lang/book/blob/1500248d8f230566e4ec9f27fcbb8fe9e2898ab1/src/ch04-02-references-and-borrowing.md"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "url": "https://github.com/rust-lang/book/blob/1500248d8f230566e4ec9f27fcbb8fe9e2898ab1/LICENSE-MIT"
+    },
+    {
+      "path": "LICENSE-APACHE",
+      "sha256": "0f2763086f981043fb18879abfa15e75ecfc188219ef9eba4483f45ce7438e1c",
+      "url": "https://github.com/rust-lang/book/blob/1500248d8f230566e4ec9f27fcbb8fe9e2898ab1/LICENSE-APACHE"
+    }
+  ]
+}

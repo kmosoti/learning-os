@@ -1,0 +1,44 @@
+{
+  "package": "@fontsource/source-sans-3",
+  "version": "5.3.1",
+  "tarball": "https://registry.npmjs.org/@fontsource/source-sans-3/-/source-sans-3-5.3.1.tgz",
+  "sha256": "b598201d980b3512805bbea186aab8ef91590d59990e6a13c90e030b6ff37881",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    },
+    {
+      "path": "source-sans-3-latin-400-normal.woff2",
+      "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b"
+    },
+    {
+      "path": "source-sans-3-latin-500-normal.woff2",
+      "sha256": "3b3a8b8e4a422ff71c9ffb0836a4d48ff337a4419b878214f65d6ebe0f59fa51"
+    },
+    {
+      "path": "source-sans-3-latin-600-normal.woff2",
+      "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38"
+    },
+    {
+      "path": "source-sans-3-latin-700-normal.woff2",
+      "sha256": "ae35266f2ab0d5314ff9a04127931eb26c793e4f1269bb240046d4d2db4b7bb1"
+    },
+    {
+      "path": "source-sans-3-latin-ext-400-normal.woff2",
+      "sha256": "f5706bb057951632456ecbc496dfd01f0e1598718cb31c464c74a6b1fe79c837"
+    },
+    {
+      "path": "source-sans-3-latin-ext-500-normal.woff2",
+      "sha256": "85b7787e2b7a8c1e89343549d3c9e5e2bc948c2fba5ad8be3b2888cdb3a39d38"
+    },
+    {
+      "path": "source-sans-3-latin-ext-600-normal.woff2",
+      "sha256": "5727d1da676bb59d22a985ccb0506219e25e847738214fec4eb00c17bed81ffc"
+    },
+    {
+      "path": "source-sans-3-latin-ext-700-normal.woff2",
+      "sha256": "6a9fd74275186fc7c5019796401ac280d2cdd19afc6cbb1ae9af481cbda9d25c"
+    }
+  ]
+}
