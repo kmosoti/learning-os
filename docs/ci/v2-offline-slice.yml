@@ -1,0 +1,31 @@
+# Inactive template: publish under .github/workflows/ with workflow-scoped credentials.
+name: LearningOS v2 offline slice
+on:
+  pull_request:
+    paths: ['Cargo.toml', 'Cargo.lock', 'rust-toolchain.toml', '.cargo/**', 'crates/**', 'apps/**', 'fixtures/**', 'sources/**', 'scripts/**', 'tests/browser/**', '.github/workflows/v2-offline-slice.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, official tag resolved 2026-10-25
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6, official action.yml inspected
+        with:
+          node-version: '24.19.0'
+          package-manager-cache: false
+      - name: Install pinned Rust tools
+        run: |
+          rustup toolchain install 1.99.0 --profile minimal --component rustfmt,clippy --target wasm32-unknown-unknown
+          cargo install wasm-bindgen-cli --version 0.2.129 --locked
+      - name: Install locked browser verification dependencies
+        run: |
+          npm ci --ignore-scripts --prefix tests/browser
+          cd tests/browser
+          npx playwright install --with-deps chromium firefox
+      - name: Verify the integrated offline slice
+        run: scripts/check-v2.sh

@@ -1,0 +1,25 @@
+[package]
+name = "learningos-web"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+[lib]
+crate-type = ["cdylib", "rlib"]
+[features]
+default = []
+ssr = ["leptos/ssr"]
+hydrate = ["leptos/hydrate", "dep:wasm-bindgen", "dep:wasm-bindgen-futures", "dep:js-sys", "dep:web-sys", "dep:any_spawner"]
+split-islands = []
+[dependencies]
+any_spawner = { version = "0.3", optional = true, features = ["wasm-bindgen"] }
+learningos-domain.workspace = true
+learningos-application.workspace = true
+learningos-protocol.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+leptos.workspace = true
+wasm-bindgen = { workspace = true, optional = true }
+wasm-bindgen-futures = { workspace = true, optional = true }
+js-sys = { workspace = true, optional = true }
+web-sys = { version = "=0.3.106", optional = true, features = ["Window","PointerEvent","MouseEvent","DomRect","BroadcastChannel","MessageEvent","Location","UrlSearchParams","Performance","HtmlCanvasElement","CanvasRenderingContext2d","Navigator","StorageManager","Storage","Crypto","Document","Element","HtmlElement","KeyboardEvent","Node","NodeList","HtmlInputElement","HtmlTextAreaElement","Event","EventTarget","DomException","DomStringList","IdbFactory","IdbDatabase","IdbOpenDbRequest","IdbRequest","IdbObjectStore","IdbTransaction","IdbTransactionMode","IdbTransactionOptions","IdbTransactionDurability","IdbKeyRange","Blob","BlobPropertyBag","Url","HtmlAnchorElement","File","FileList","ServiceWorkerContainer","ServiceWorkerRegistration","console"] }

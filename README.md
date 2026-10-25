@@ -101,3 +101,8 @@ Build a local app that can:
 6. Show the source and span count in a plain UI.
 
 That creates the first observable thread through the architecture before adding LLM extraction or quiz behavior.
+
+## LearningOS 2.0 offline slice
+
+The new Rust/Leptos/Axum application is separate from the preserved Python app.
+See [run commands, architecture and verification boundaries](docs/architecture/v2-offline-slice.md).
