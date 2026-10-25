@@ -21,7 +21,8 @@ is test orchestration and the Turso package's JS interop, not product logic.
 `run_native.py` alternates native engines across three repetitions. Browser `run.mjs`
 checks Chrome/Firefox and measures two Chromium datasets; `lifecycle.mjs` covers
 multi-tab CAS, migration rollback, quota exhaustion, worker death and genuine Chrome
-process-group SIGKILL/reopen. It only kills processes that it launched.
+process-group SIGKILL/reopen. It only kills processes that it launched. `memory.mjs`
+records a separate process-RSS snapshot after 10k events; it contributes no latency samples.
 
 Baseline or harness failures return a failing exit code. A Turso applicability
 failure is retained as a candidate result rather than concealing the comparison.

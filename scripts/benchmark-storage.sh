@@ -14,4 +14,5 @@ python experiments/storage/run_native.py
 python experiments/storage/concurrency.py
 node experiments/storage/browser/run.mjs
 node experiments/storage/browser/lifecycle.mjs
+node experiments/storage/browser/memory.mjs
 python experiments/storage/pack_results.py

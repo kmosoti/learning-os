@@ -43,7 +43,7 @@
     },
     {
       "path": "experiments/storage/browser/package.json",
-      "sha256": "edf16b9670d606a8ce0bac5afcac058306eda60d464228af461dbab585096ce1"
+      "sha256": "977d938dc00d93a7697bb2b3094638267cd7fdaad7be687a53ac3f3d1978f30b"
     },
     {
       "path": "experiments/storage/browser/package-lock.json",
@@ -64,6 +64,10 @@
     {
       "path": "experiments/storage/browser/lifecycle.mjs",
       "sha256": "915a4473a3802f363d187024ec8b0ace45f6d0f94e60520c09f90fec8db26952"
+    },
+    {
+      "path": "experiments/storage/browser/memory.mjs",
+      "sha256": "9672f260c57d5a4861706efe19626987a47804d86ad12be29727a4f65ce4f7b6"
     }
   ]
 }

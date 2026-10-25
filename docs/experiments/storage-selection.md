@@ -83,6 +83,12 @@ mobile performance. Browser applicability failures dominate selection.
 | Rust IndexedDB | 100,000 | 8.405 | 14.145 | 730.460 |
 | Turso OPFS | 100,000 | 4.560 | 8.785 | 788.420 |
 
+A separate fresh-browser memory probe after 10k events/replay observed an increase
+of about 105 MiB in summed process RSS for IDB and 218 MiB for Turso. This is a
+snapshot across the browser's processes, includes browser overhead and can count
+shared pages twice; it is neither peak nor proportional set size. The raw
+[process-type snapshots](results/storage-browser-memory.json) retain those limits.
+
 Both passed basic journal/reopen/receipt conformance in Chromium and Firefox and
 three Chromium process-kill-after-ACK schedules per engine. IDB's two-tab race
 committed exactly one revision and rejected the other as stale; Turso's second

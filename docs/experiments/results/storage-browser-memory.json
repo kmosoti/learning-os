@@ -1,0 +1,162 @@
+{
+  "at": "2026-10-25T21:47:43.927Z",
+  "boundary": "Persistent Chrome profile, fresh browser per engine. Snapshot after 10k events plus replay. Sum of process RSS, not peak/PSS; shared memory may double count. This probe does not contribute latency samples.",
+  "runs": [
+    {
+      "engine": "idb",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "before": {
+        "processes": [
+          {
+            "type": "browser",
+            "rss_kib": 239380
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 80364
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 127244
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 105496
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 143328
+          },
+          {
+            "type": "GPU",
+            "rss_kib": 91520
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "rss_kib": 121852
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "rss_kib": 51356
+          }
+        ],
+        "total_rss_kib": 960540
+      },
+      "after": {
+        "processes": [
+          {
+            "type": "browser",
+            "rss_kib": 259004
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 80560
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 202128
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 105564
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 150724
+          },
+          {
+            "type": "GPU",
+            "rss_kib": 91528
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "rss_kib": 126904
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "rss_kib": 51356
+          }
+        ],
+        "total_rss_kib": 1067768
+      }
+    },
+    {
+      "engine": "turso",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "before": {
+        "processes": [
+          {
+            "type": "browser",
+            "rss_kib": 237384
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 78976
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 128180
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 105984
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 138304
+          },
+          {
+            "type": "GPU",
+            "rss_kib": 91420
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "rss_kib": 121968
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "rss_kib": 51376
+          }
+        ],
+        "total_rss_kib": 953592
+      },
+      "after": {
+        "processes": [
+          {
+            "type": "browser",
+            "rss_kib": 240164
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 79108
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 330256
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 106052
+          },
+          {
+            "type": "renderer",
+            "rss_kib": 151424
+          },
+          {
+            "type": "GPU",
+            "rss_kib": 91496
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "rss_kib": 126556
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "rss_kib": 51376
+          }
+        ],
+        "total_rss_kib": 1176432
+      }
+    }
+  ]
+}
