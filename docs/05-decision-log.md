@@ -1,5 +1,10 @@
 # Decision Log
 
+> Historical decisions below retain their original rationale. The owner authorized
+> the LearningOS 2.0 direction on 2026-10-25. [ADR-011](adr/011-rust-leptos-pwa-pivot.md)
+> proposes explicit supersession of obsolete stack decisions; ADR-012–015 record
+> storage, evidence, offline and UI boundaries. See the [execution contract](architecture/v2-execution-contract.md).
+
 This file records initial architecture decisions. Use it as lightweight ADR history.
 
 ## ADR-001 - MVP Scope Is Course-Grounded Study, Not Auto-Updating Science

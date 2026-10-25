@@ -140,3 +140,14 @@ For MVP core code, the PR must also prove:
 - Time and space complexity are understood.
 - LLM, embedding, database, graph, file I/O, and external-call costs are bounded.
 - Source provenance is preserved for generated learning content.
+
+## LearningOS 2.0 owner direction (2026-10-25)
+
+The owner approved implementation of the v2 plan. Read
+`docs/architecture/v2-execution-contract.md` and ADR-011–015 before v2 work.
+Rust, Leptos SSR/islands, Axum/Tokio, embedded SQLite-family persistence and offline
+local evidence are fixed; no PostgreSQL/Python/HTMX production path for v2.
+Mechanism choices follow the documented experiments. Preserve legacy code/data and
+historical decisions. This direction does not waive issue/branch/review requirements
+or authorize agents to merge. Do not mistake the legacy setup instructions for the
+new architecture, and do not mark unmeasured release gates complete.
