@@ -19,6 +19,7 @@ The project should not start as an automatic contemporary science updater. The a
 - [Architecture Decision Records](docs/adr/README.md)
 - [Risk Register](docs/06-risk-register.md)
 - [Engineering Standards](docs/07-engineering-standards.md)
+- [Service Contract Template](docs/templates/service-contract.md)
 - [GitHub Bootstrap](docs/08-github-bootstrap.md)
 - [Lightweight Requirements Discovery](docs/09-lightweight-requirements-discovery.md)
 - [Thesis Workspace](docs/thesis/00-index.md)

@@ -198,6 +198,12 @@ All remaining MVP cards below.
 | KAN-085 | Implement quiz-ready claim selection. | M | KAN-083 | Grounded and partially grounded claims can be selected for quiz generation. |
 | KAN-086 | Add note lifecycle integration test. | L | KAN-081, KAN-083 | Note to claim to grounded status works against fixture spans. |
 
+KAN-083 is the card used for the worked example of the
+[service contract template](templates/service-contract.md):
+[KAN-083 claim grounding service contract](templates/examples/kan-083-claim-grounding.md)
+shows every required field filled in, including the fields that stay `pending` until their
+blocking decision lands.
+
 ### Epic H - Quiz, Evaluation, And Learner Graph
 
 | ID | Card | Size | Depends | Acceptance |
