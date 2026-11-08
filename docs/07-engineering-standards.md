@@ -195,6 +195,15 @@ Minimum contract fields:
 | External cost | LLM calls, embedding calls, database queries, file reads, network calls. |
 | Provenance | Source span, prompt version, or evidence reference retained. |
 
+Fill one in per public service method with the
+[service contract template](templates/service-contract.md). That template carries these
+fields in a copyable block, a field-by-field completion checklist, and a worked example for
+an upcoming service card: [KAN-083 claim grounding](templates/examples/kan-083-claim-grounding.md).
+
+Write "none" for a field that does not apply; a blank or "TBD" field means the contract is
+unfinished. A contract that names its limits, its closed set of writes, and its provenance is
+reviewable without reading the implementation.
+
 ## External API Spec Standard
 
 APIs and automation surfaces must be treated as contracts, not guessed interfaces.
@@ -500,6 +509,7 @@ Use this checklist for every nontrivial implementation PR:
 [ ] Protocols are used for swappable dependencies.
 [ ] State transitions are validated.
 [ ] Operation idempotency is documented.
+[ ] Public service changes have a filled-in [service contract](templates/service-contract.md) with input, output, mutation, idempotency, failure modes, complexity, external cost, and provenance answered.
 [ ] Failure modes use domain errors or structured result statuses.
 [ ] Time complexity is understood.
 [ ] Space complexity is understood.
