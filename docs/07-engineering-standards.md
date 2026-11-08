@@ -198,7 +198,7 @@ Minimum contract fields:
 Fill one in per public service method with the
 [service contract template](templates/service-contract.md). That template carries these
 fields in a copyable block, a field-by-field completion checklist, and a worked example for
-an upcoming service card: [KAN-083 claim grounding](templates/examples/kan-083-claim-grounding.md).
+the active LearningOS 2.0 slice: [offline journal command](templates/examples/v2-journal-command.md).
 
 Write "none" for a field that does not apply; a blank or "TBD" field means the contract is
 unfinished. A contract that names its limits, its closed set of writes, and its provenance is

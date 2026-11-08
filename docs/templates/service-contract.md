@@ -26,8 +26,8 @@ code. Keep all eight required fields even when the answer is "none": a blank or 
 field means the contract is unfinished, not that the field did not apply.
 
 ```text
-Service: <module or type plus method, e.g. ClaimGrounder.ground>
-Card: <KAN-### and issue link>
+Service: <module or type plus method, e.g. JournalService::execute>
+Card: <issue/card identifier and link>
 Status: <draft | implemented | verified>
 Owner: <who can answer questions about it>
 
@@ -95,6 +95,6 @@ Rules of thumb:
 
 ## Worked Example
 
-[KAN-083 claim grounding service contract](examples/kan-083-claim-grounding.md) shows this
-template filled in for an upcoming service card, including the fields that legitimately
-stay open until their blocking decision lands.
+[Offline journal command](examples/v2-journal-command.md) shows this template filled in for
+a service use case in the active LearningOS 2.0 slice (#52, draft PR #56). Its implementation
+evidence is explicitly marked as pending review and merge.
